@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuperBirder - 慧眼观鸟 | AI Bird Identification</title>
+    <meta name="description" content="AI智能鸟类识别应用 - 10,964种鸟类识别，用记录见证观鸟旅程。AI-powered bird identification app.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/icon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Subtle grain overlay -->
+    <div class="grain"></div>
+
+    <!-- Header -->
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">
+                <img src="img/icon.png" alt="SuperBirder">
+                <span>SuperBirder</span>
+            </a>
+            <div class="lang-switch">
+                <button class="lang-btn active" onclick="setLang('cn')">中</button>
+                <button class="lang-btn" onclick="setLang('en')">EN</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-badge">
+                <span class="lang-cn">AI 鸟类识别</span>
+                <span class="lang-en">AI Bird Identification</span>
+            </div>
+            
+            <!-- App Icon + Title -->
+            <div class="hero-brand">
+                <img src="img/icon.png" alt="SuperBirder" class="hero-icon">
+                <h1>
+                    <span class="lang-cn">慧眼观鸟</span>
+                    <span class="lang-en">SuperBirder</span>
+                </h1>
+            </div>
+            
+            <p class="tagline">
+                <span class="lang-cn">比你更懂鸟，用记录见证观鸟旅程</span>
+                <span class="lang-en">Know Birds Better, Record Your Birding Journey</span>
+            </p>
+
+            <!-- Stats -->
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number">10,964</div>
+                    <div class="stat-label">
+                        <span class="lang-cn">鸟类物种</span>
+                        <span class="lang-en">Bird Species</span>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">V1.1</div>
+                    <div class="stat-label">
+                        <span class="lang-cn">最新版本</span>
+                        <span class="lang-en">Latest Version</span>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">FREE</div>
+                    <div class="stat-label">
+                        <span class="lang-cn">免费下载</span>
+                        <span class="lang-en">Free Download</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-cta">
+                <a href="https://apps.apple.com/cn/app/%E6%85%A7%E7%9C%BC%E8%A7%82%E9%B8%9F/id6756405107" class="btn btn-primary" target="_blank">
+                    <span class="lang-cn">App Store 下载</span>
+                    <span class="lang-en">Download on App Store</span>
+                </a>
+                <a href="#features" class="btn btn-ghost">
+                    <span class="lang-cn">了解更多</span>
+                    <span class="lang-en">Learn More</span>
+                </a>
+            </div>
+
+            <!-- Phone Mockup -->
+            <div class="hero-preview">
+                <div class="phone-mockup">
+                    <div class="phone-glow"></div>
+                    <div class="phone-frame">
+                        <!-- Placeholder for screenshot -->
+                        <div class="phone-placeholder">
+                            <div class="phone-placeholder-icon">📱</div>
+                            <div class="phone-placeholder-text">
+                                <span class="lang-cn">首页截图</span>
+                                <span class="lang-en">Home Screen</span>
+                            </div>
+                            <div class="phone-placeholder-size">1206 × 2622 px</div>
+                        </div>
+                        <!-- Uncomment when screenshot is ready:
+                        <img src="img/screenshots/home.png" alt="SuperBirder Home" class="phone-screen">
+                        -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Help Section (FAQ/Tutorial Link) -->
+    <section class="help-section">
+        <div class="container">
+            <div class="help-card">
+                <div class="help-icon">📖</div>
+                <div class="help-content">
+                    <h3>
+                        <span class="lang-cn">新手入门</span>
+                        <span class="lang-en">Getting Started</span>
+                    </h3>
+                    <p>
+                        <span class="lang-cn">第一次使用？查看详细的图文教程，从入门到精通</span>
+                        <span class="lang-en">First time user? Check our detailed step-by-step tutorial</span>
+                    </p>
+                </div>
+                <div class="help-buttons">
+                    <a href="#" class="btn btn-primary btn-coming-soon">
+                        <span class="lang-cn">使用教程 (即将推出)</span>
+                        <span class="lang-en">Tutorial (Coming Soon)</span>
+                    </a>
+                    <a href="#" class="btn btn-ghost btn-coming-soon">
+                        <span class="lang-cn">常见问题</span>
+                        <span class="lang-en">FAQ</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">
+                    <span class="lang-cn">核心功能</span>
+                    <span class="lang-en">Features</span>
+                </span>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-number">01</div>
+                    <div class="feature-icon">🔍</div>
+                    <h3>
+                        <span class="lang-cn">AI 鸟种识别</span>
+                        <span class="lang-en">AI Bird ID</span>
+                    </h3>
+                    <p>
+                        <span class="lang-cn">本地 CoreML + 懂鸟 API 云端识别，覆盖 10,964 种鸟类</span>
+                        <span class="lang-en">Local CoreML + Cloud API, covering 10,964 bird species</span>
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-number">02</div>
+                    <div class="feature-icon">❤️</div>
+                    <h3>
+                        <span class="lang-cn">社区点赞</span>
+                        <span class="lang-en">Community Likes</span>
+                    </h3>
+                    <p>
+                        <span class="lang-cn">支持对社区鸟讯点赞互动，详情页实时显示点赞数量</span>
+                        <span class="lang-en">Like and interact with community sightings in real-time</span>
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-number">03</div>
+                    <div class="feature-icon">📊</div>
+                    <h3>
+                        <span class="lang-cn">年度报告</span>
+                        <span class="lang-en">Yearly Report</span>
+                    </h3>
+                    <p>
+                        <span class="lang-cn">自动生成年度观鸟回顾，包含详细统计数据和国家分布</span>
+                        <span class="lang-en">Auto-generate yearly birding summary with detailed stats</span>
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-number">04</div>
+                    <div class="feature-icon">🗺️</div>
+                    <h3>
+                        <span class="lang-cn">地图导航</span>
+                        <span class="lang-en">Map Navigation</span>
+                    </h3>
+                    <p>
+                        <span class="lang-cn">地图缩略图标记 + 探索模式，可直接导航至观测点</span>
+                        <span class="lang-en">Thumbnail markers + explore mode, navigate to sighting locations</span>
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-number">05</div>
+                    <div class="feature-icon">☁️</div>
+                    <h3>
+                        <span class="lang-cn">云端同步</span>
+                        <span class="lang-en">Cloud Sync</span>
+                    </h3>
+                    <p>
+                        <span class="lang-cn">iCloud 自动同步，数据安全备份，多设备无缝切换</span>
+                        <span class="lang-en">iCloud auto-sync, secure backup, seamless multi-device</span>
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-number">06</div>
+                    <div class="feature-icon">👑</div>
+                    <h3>
+                        <span class="lang-cn">生涯新鸟</span>
+                        <span class="lang-en">Life Birds</span>
+                    </h3>
+                    <p>
+                        <span class="lang-cn">皇冠徽章标记生涯新鸟种，见证每一次珍贵的初见</span>
+                        <span class="lang-en">Crown badge marks life birds, celebrate every first sighting</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Version Section -->
+    <section class="version-section" id="version">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">
+                    <span class="lang-cn">最新更新</span>
+                    <span class="lang-en">What's New</span>
+                </span>
+            </div>
+            <div class="version-card">
+                <div class="version-header">
+                    <span class="version-badge">V1.1</span>
+                    <span class="version-date">
+                        <span class="lang-cn">最新版本</span>
+                        <span class="lang-en">Latest Version</span>
+                    </span>
+                </div>
+                <ul class="version-list">
+                    <li>
+                        <span class="lang-cn">社区点赞：支持对社区鸟讯点赞互动</span>
+                        <span class="lang-en">Community Likes: Like and interact with sightings</span>
+                    </li>
+                    <li>
+                        <span class="lang-cn">在线识别：集成懂鸟 API 云端识别</span>
+                        <span class="lang-en">Cloud ID: Integrated Dongniao API for cloud recognition</span>
+                    </li>
+                    <li>
+                        <span class="lang-cn">年度报告：自动生成年度观鸟回顾</span>
+                        <span class="lang-en">Yearly Report: Auto-generate yearly birding summary</span>
+                    </li>
+                    <li>
+                        <span class="lang-cn">地图缩略图：放大地图时显示鸟种缩略图</span>
+                        <span class="lang-en">Map Thumbnails: Show bird thumbnails when zoomed in</span>
+                    </li>
+                    <li>
+                        <span class="lang-cn">HEIC 格式：图片存储节省 40-50% 空间</span>
+                        <span class="lang-en">HEIC Format: Save 40-50% storage space</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section class="download-section" id="download">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">
+                    <span class="lang-cn">下载</span>
+                    <span class="lang-en">Download</span>
+                </span>
+            </div>
+            <div class="download-card">
+                <img src="img/icon.png" alt="SuperBirder" class="download-icon">
+                <h2 class="download-title">SuperBirder</h2>
+                <p class="download-subtitle">
+                    <span class="lang-cn">慧眼观鸟 · 比你更懂鸟</span>
+                    <span class="lang-en">Know Birds Better</span>
+                </p>
+                <div class="download-badges">
+                    <a href="https://apps.apple.com/cn/app/%E6%85%A7%E7%9C%BC%E8%A7%82%E9%B8%9F/id6756405107" target="_blank">
+                        <img src="img/app-store-badge.svg" alt="Download on App Store" class="app-store-badge">
+                    </a>
+                </div>
+                <p class="download-requirements">
+                    <span class="lang-cn">iOS 18.0+ · iPhone · 免费</span>
+                    <span class="lang-en">iOS 18.0+ · iPhone · Free</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- More Tools Section -->
+    <section class="tools-section" id="tools">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">
+                    <span class="lang-cn">更多免费工具</span>
+                    <span class="lang-en">More Free Tools</span>
+                </span>
+            </div>
+            <div class="tools-grid">
+                <a href="https://superpicky.jamesphotography.com.au/" class="tool-item" target="_blank">
+                    <span class="tool-name">
+                        <span class="lang-cn">慧眼选鸟</span>
+                        <span class="lang-en">SuperPicky</span>
+                    </span>
+                    <span class="tool-desc">
+                        <span class="lang-cn">AI 鸟类摄影选片 (Mac/Win)</span>
+                        <span class="lang-en">AI Bird Photo Selector (Mac/Win)</span>
+                    </span>
+                </a>
+                <a href="https://superstaroff.jamesphotography.com.au/" class="tool-item" target="_blank">
+                    <span class="tool-name">
+                        <span class="lang-cn">慧眼去星</span>
+                        <span class="lang-en">StarRemover</span>
+                    </span>
+                    <span class="tool-desc">
+                        <span class="lang-cn">AI 银河去星 (Photoshop)</span>
+                        <span class="lang-en">AI Milky Way (Photoshop)</span>
+                    </span>
+                </a>
+                <a href="https://superstartrail.jamesphotography.com.au/" class="tool-item" target="_blank">
+                    <span class="tool-name">
+                        <span class="lang-cn">彗星星轨</span>
+                        <span class="lang-en">StarTrail</span>
+                    </span>
+                    <span class="tool-desc">
+                        <span class="lang-cn">星轨合成 (Mac/Win)</span>
+                        <span class="lang-en">Star Trail (Mac/Win)</span>
+                    </span>
+                </a>
+                <a href="https://tuiportfolio.com/" class="tool-item" target="_blank">
+                    <span class="tool-name">
+                        <span class="lang-cn">图忆</span>
+                        <span class="lang-en">TUI Portfolio</span>
+                    </span>
+                    <span class="tool-desc">
+                        <span class="lang-cn">鸟类作品集 (iOS)</span>
+                        <span class="lang-en">Bird Portfolio (iOS)</span>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <img src="img/icon.png" alt="SuperBirder">
+                    <div class="footer-brand-text">
+                        <span>SuperBirder</span>
+                        <span class="footer-author">by James Yu (詹姆斯·于震)</span>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <a href="#">
+                        <span class="lang-cn">使用教程</span>
+                        <span class="lang-en">Tutorial</span>
+                    </a>
+                    <a href="#">
+                        <span class="lang-cn">常见问题</span>
+                        <span class="lang-en">FAQ</span>
+                    </a>
+                    <a href="https://github.com/jamesphotography">GitHub</a>
+                    <a href="https://www.youtube.com/@JamesZhenYu">YouTube</a>
+                    <a href="mailto:james@jamesphotography.com.au">
+                        <span class="lang-cn">联系</span>
+                        <span class="lang-en">Contact</span>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">© 2024-2026 James Yu · jamesphotography.com.au</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Language Toggle Script -->
+    <script>
+        function setLang(lang) {
+            document.documentElement.setAttribute('data-lang', lang);
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            localStorage.setItem('superbirder-lang', lang);
+        }
+
+        // Load saved language
+        const savedLang = localStorage.getItem('superbirder-lang') || 'cn';
+        document.documentElement.setAttribute('data-lang', savedLang);
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                const isCN = btn.textContent.includes('中');
+                if ((savedLang === 'cn' && isCN) || (savedLang === 'en' && !isCN)) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
