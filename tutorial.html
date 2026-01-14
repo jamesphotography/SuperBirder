@@ -71,88 +71,115 @@
             padding: var(--space-xl) 0 var(--space-2xl);
         }
 
+        /* Section styles */
         .tutorial-section {
             margin-bottom: var(--space-2xl);
             scroll-margin-top: 140px;
         }
 
-        .tutorial-section h2 {
-            font-size: 24px;
-            font-weight: 600;
-            margin-bottom: var(--space-lg);
-            padding-bottom: var(--space-md);
-            border-bottom: 1px solid var(--border-subtle);
+        .section-header {
             display: flex;
             align-items: center;
             gap: var(--space-md);
+            margin-bottom: var(--space-lg);
+            padding-bottom: var(--space-md);
+            border-bottom: 1px solid var(--border-subtle);
         }
 
         .section-number {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 32px;
-            height: 32px;
+            width: 36px;
+            height: 36px;
             background: var(--accent);
             color: var(--bg-void);
             border-radius: 50%;
-            font-size: 14px;
+            font-size: 16px;
             font-weight: 700;
             font-family: var(--font-mono);
+            flex-shrink: 0;
         }
 
-        .tutorial-section h3 {
+        .section-header h2 {
+            font-size: 24px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        /* Step block - side by side layout */
+        .step-block {
+            display: grid;
+            grid-template-columns: 1fr 240px;
+            gap: var(--space-xl);
+            align-items: center;
+            margin-bottom: var(--space-xl);
+            padding-bottom: var(--space-xl);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .step-block:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        /* Alternate: image on left */
+        .step-block.reverse {
+            grid-template-columns: 240px 1fr;
+        }
+
+        .step-block.reverse .step-content {
+            order: 2;
+        }
+
+        .step-block.reverse .step-image {
+            order: 1;
+        }
+
+        .step-content h3 {
             font-size: 18px;
             font-weight: 600;
-            margin: var(--space-lg) 0 var(--space-md);
+            margin-bottom: var(--space-sm);
             color: var(--text-primary);
         }
 
-        .tutorial-section p {
+        .step-content p {
             color: var(--text-secondary);
             font-size: 15px;
-            line-height: 1.8;
+            line-height: 1.7;
             margin-bottom: var(--space-md);
         }
 
-        .tutorial-section ul,
-        .tutorial-section ol {
-            color: var(--text-secondary);
-            font-size: 15px;
-            line-height: 1.8;
-            margin-bottom: var(--space-md);
-            padding-left: var(--space-lg);
+        .step-content p:last-child {
+            margin-bottom: 0;
         }
 
-        .tutorial-section li {
-            margin-bottom: var(--space-sm);
-        }
-
-        .screenshot-container {
-            margin: var(--space-lg) 0;
+        .step-image {
             text-align: center;
         }
 
         .screenshot {
-            max-width: 280px;
             width: 100%;
+            max-width: 220px;
             border-radius: var(--radius-lg);
-            border: 4px solid var(--bg-card);
-            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+            border: 3px solid var(--bg-card);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
         }
 
         .screenshot-caption {
             margin-top: var(--space-sm);
-            font-size: 12px;
+            font-size: 11px;
             color: var(--text-tertiary);
         }
 
+        /* Tip / Important boxes */
         .tip-box {
             background: var(--accent-dim);
             border: 1px solid rgba(200, 255, 0, 0.2);
             border-radius: var(--radius-md);
             padding: var(--space-md);
-            margin: var(--space-md) 0;
+            margin-top: var(--space-md);
         }
 
         .tip-box-title {
@@ -166,9 +193,10 @@
         }
 
         .tip-box p {
-            font-size: 14px;
+            font-size: 13px;
             color: var(--text-secondary);
             margin: 0;
+            line-height: 1.6;
         }
 
         .important-box {
@@ -176,7 +204,7 @@
             border: 1px solid rgba(230, 179, 77, 0.3);
             border-radius: var(--radius-md);
             padding: var(--space-md);
-            margin: var(--space-md) 0;
+            margin-top: var(--space-md);
         }
 
         .important-box-title {
@@ -187,16 +215,49 @@
         }
 
         .important-box p {
-            font-size: 14px;
+            font-size: 13px;
             color: var(--text-secondary);
             margin: 0;
+            line-height: 1.6;
         }
 
-        .feature-list {
+        /* Data table */
+        .table-container {
+            overflow-x: auto;
+            margin-top: var(--space-md);
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+
+        .data-table th,
+        .data-table td {
+            padding: var(--space-sm) var(--space-md);
+            text-align: left;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .data-table th {
+            color: var(--text-tertiary);
+            font-weight: 500;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .data-table td {
+            color: var(--text-secondary);
+        }
+
+        /* Feature grid */
+        .feature-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: 1fr 1fr;
             gap: var(--space-md);
-            margin: var(--space-md) 0;
+            margin-top: var(--space-md);
         }
 
         .feature-item {
@@ -210,43 +271,15 @@
             color: var(--text-primary);
             display: block;
             margin-bottom: 4px;
-        }
-
-        .feature-item span {
-            font-size: 13px;
-            color: var(--text-tertiary);
-        }
-
-        .table-container {
-            overflow-x: auto;
-            margin: var(--space-md) 0;
-        }
-
-        .data-table {
-            width: 100%;
-            border-collapse: collapse;
             font-size: 14px;
         }
 
-        .data-table th,
-        .data-table td {
-            padding: var(--space-sm) var(--space-md);
-            text-align: left;
-            border-bottom: 1px solid var(--border-subtle);
-        }
-
-        .data-table th {
-            color: var(--text-tertiary);
-            font-weight: 500;
+        .feature-item span {
             font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            color: var(--text-tertiary);
         }
 
-        .data-table td {
-            color: var(--text-secondary);
-        }
-
+        /* Back to top */
         .back-to-top {
             position: fixed;
             bottom: var(--space-lg);
@@ -275,9 +308,31 @@
             box-shadow: 0 8px 24px var(--accent-glow);
         }
 
+        /* Responsive - stack on mobile */
         @media (max-width: 768px) {
+
+            .step-block,
+            .step-block.reverse {
+                grid-template-columns: 1fr;
+                gap: var(--space-lg);
+            }
+
+            .step-block .step-content,
+            .step-block.reverse .step-content {
+                order: 1;
+            }
+
+            .step-block .step-image,
+            .step-block.reverse .step-image {
+                order: 2;
+            }
+
             .screenshot {
-                max-width: 240px;
+                max-width: 200px;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -355,515 +410,559 @@
 
             <!-- Section 1: Quick Start -->
             <section class="tutorial-section" id="start">
-                <h2>
+                <div class="section-header">
                     <span class="section-number">1</span>
-                    <span class="lang-cn">快速入门</span>
-                    <span class="lang-en">Quick Start</span>
-                </h2>
+                    <h2>
+                        <span class="lang-cn">快速入门</span>
+                        <span class="lang-en">Quick Start</span>
+                    </h2>
+                </div>
 
-                <h3>
-                    <span class="lang-cn">下载应用</span>
-                    <span class="lang-en">Download</span>
-                </h3>
-                <p>
-                    <span class="lang-cn">在 App Store 搜索"<strong>慧眼观鸟</strong>"或直接点击下方按钮下载。</span>
-                    <span class="lang-en">Search "<strong>SuperBirder</strong>" in App Store or click the button
-                        below.</span>
-                </p>
-                <p>
-                    <a href="https://apps.apple.com/cn/app/id6756405107" class="btn btn-primary" target="_blank">
-                        <span class="lang-cn">App Store 下载</span>
-                        <span class="lang-en">Download on App Store</span>
-                    </a>
-                </p>
-
-                <div class="screenshot-container">
-                    <img src="img/screenshoot/启动画面.png" alt="启动画面" class="screenshot">
-                    <div class="screenshot-caption">
-                        <span class="lang-cn">应用启动画面</span>
-                        <span class="lang-en">App Launch Screen</span>
+                <!-- Step 1.1 -->
+                <div class="step-block">
+                    <div class="step-content">
+                        <h3>
+                            <span class="lang-cn">下载应用</span>
+                            <span class="lang-en">Download</span>
+                        </h3>
+                        <p>
+                            <span class="lang-cn">在 App Store 搜索"<strong>慧眼观鸟</strong>"或直接点击下方按钮下载。</span>
+                            <span class="lang-en">Search "<strong>SuperBirder</strong>" in App Store or click the
+                                button below.</span>
+                        </p>
+                        <p>
+                            <a href="https://apps.apple.com/cn/app/id6756405107" class="btn btn-primary"
+                                target="_blank">
+                                <span class="lang-cn">App Store 下载</span>
+                                <span class="lang-en">Download on App Store</span>
+                            </a>
+                        </p>
+                    </div>
+                    <div class="step-image">
+                        <img src="img/screenshoot/启动画面.png" alt="启动画面" class="screenshot">
+                        <div class="screenshot-caption">
+                            <span class="lang-cn">应用启动画面</span>
+                            <span class="lang-en">App Launch Screen</span>
+                        </div>
                     </div>
                 </div>
 
-                <h3>
-                    <span class="lang-cn">Apple ID 登录</span>
-                    <span class="lang-en">Sign in with Apple</span>
-                </h3>
-                <p>
-                    <span class="lang-cn">首次使用需要通过 Apple ID 登录，这是苹果官方的安全登录方式。</span>
-                    <span class="lang-en">Sign in with your Apple ID for secure authentication.</span>
-                </p>
-
-                <div class="screenshot-container">
-                    <img src="img/screenshoot/01_login.png" alt="登录页面" class="screenshot">
-                    <div class="screenshot-caption">
-                        <span class="lang-cn">Apple ID 登录页面</span>
-                        <span class="lang-en">Apple ID Login</span>
+                <!-- Step 1.2 -->
+                <div class="step-block reverse">
+                    <div class="step-content">
+                        <h3>
+                            <span class="lang-cn">Apple ID 登录</span>
+                            <span class="lang-en">Sign in with Apple</span>
+                        </h3>
+                        <p>
+                            <span class="lang-cn">首次使用需要通过 Apple ID 登录，这是苹果官方的安全登录方式。</span>
+                            <span class="lang-en">Sign in with your Apple ID for secure authentication.</span>
+                        </p>
+                        <div class="tip-box">
+                            <div class="tip-box-title">💡
+                                <span class="lang-cn">小贴士</span>
+                                <span class="lang-en">Tip</span>
+                            </div>
+                            <p>
+                                <span class="lang-cn">使用 Apple ID 登录无需记忆额外密码，国内国外用户都可以使用，数据自动跨设备同步。</span>
+                                <span class="lang-en">Apple ID works worldwide with automatic cross-device sync.</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="step-image">
+                        <img src="img/screenshoot/01_login.png" alt="登录页面" class="screenshot">
+                        <div class="screenshot-caption">
+                            <span class="lang-cn">Apple ID 登录</span>
+                            <span class="lang-en">Apple ID Login</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="tip-box">
-                    <div class="tip-box-title">💡
-                        <span class="lang-cn">小贴士</span>
-                        <span class="lang-en">Tip</span>
+                <!-- Step 1.3 -->
+                <div class="step-block">
+                    <div class="step-content">
+                        <h3>
+                            <span class="lang-cn">设置昵称</span>
+                            <span class="lang-en">Set Nickname</span>
+                        </h3>
+                        <p>
+                            <span class="lang-cn">登录后设置你的昵称（2-20个字符），昵称将显示在你分享到社区的记录中。</span>
+                            <span class="lang-en">Set your nickname (2-20 characters) which will appear on your shared
+                                sightings.</span>
+                        </p>
                     </div>
-                    <p>
-                        <span class="lang-cn">使用 Apple ID 登录无需记忆额外密码，国内国外用户都可以使用，数据自动跨设备同步。</span>
-                        <span class="lang-en">Apple ID works worldwide with automatic cross-device sync.</span>
-                    </p>
-                </div>
-
-                <h3>
-                    <span class="lang-cn">设置昵称</span>
-                    <span class="lang-en">Set Nickname</span>
-                </h3>
-                <p>
-                    <span class="lang-cn">登录后设置你的昵称（2-20个字符），昵称将显示在你分享到社区的记录中。</span>
-                    <span class="lang-en">Set your nickname (2-20 characters) which will appear on your shared
-                        sightings.</span>
-                </p>
-
-                <div class="screenshot-container">
-                    <img src="img/screenshoot/02_nickname.png" alt="设置昵称" class="screenshot">
-                    <div class="screenshot-caption">
-                        <span class="lang-cn">设置个人昵称</span>
-                        <span class="lang-en">Set Your Nickname</span>
+                    <div class="step-image">
+                        <img src="img/screenshoot/02_nickname.png" alt="设置昵称" class="screenshot">
+                        <div class="screenshot-caption">
+                            <span class="lang-cn">设置个人昵称</span>
+                            <span class="lang-en">Set Your Nickname</span>
+                        </div>
                     </div>
                 </div>
             </section>
 
             <!-- Section 2: Bird Identification -->
             <section class="tutorial-section" id="identify">
-                <h2>
+                <div class="section-header">
                     <span class="section-number">2</span>
-                    <span class="lang-cn">鸟类识别</span>
-                    <span class="lang-en">Bird Identification</span>
-                </h2>
+                    <h2>
+                        <span class="lang-cn">鸟类识别</span>
+                        <span class="lang-en">Bird Identification</span>
+                    </h2>
+                </div>
 
-                <h3>
-                    <span class="lang-cn">选择照片</span>
-                    <span class="lang-en">Select Photo</span>
-                </h3>
-                <p>
-                    <span class="lang-cn">在主页面点击"<strong>选择图片</strong>"按钮，从相册中选择一张鸟类照片。</span>
-                    <span class="lang-en">Tap "<strong>Select Image</strong>" and choose a bird photo from your
-                        library.</span>
-                </p>
-
-                <div class="screenshot-container">
-                    <img src="img/screenshoot/03_home.png" alt="识别主页" class="screenshot">
-                    <div class="screenshot-caption">
-                        <span class="lang-cn">识别主页面</span>
-                        <span class="lang-en">Identification Home</span>
+                <!-- Step 2.1 -->
+                <div class="step-block reverse">
+                    <div class="step-content">
+                        <h3>
+                            <span class="lang-cn">选择照片</span>
+                            <span class="lang-en">Select Photo</span>
+                        </h3>
+                        <p>
+                            <span class="lang-cn">在主页面点击"<strong>选择图片</strong>"按钮，从相册中选择一张鸟类照片。</span>
+                            <span class="lang-en">Tap "<strong>Select Image</strong>" and choose a bird photo from your
+                                library.</span>
+                        </p>
+                        <div class="tip-box">
+                            <div class="tip-box-title">📷
+                                <span class="lang-cn">拍摄建议</span>
+                                <span class="lang-en">Photo Tips</span>
+                            </div>
+                            <p>
+                                <span class="lang-cn">建议使用系统相机拍摄高清照片，相机拍摄的图片识别效果最佳。</span>
+                                <span class="lang-en">Use your system camera for best identification results.</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="step-image">
+                        <img src="img/screenshoot/03_home.png" alt="识别主页" class="screenshot">
+                        <div class="screenshot-caption">
+                            <span class="lang-cn">识别主页面</span>
+                            <span class="lang-en">Identification Home</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="tip-box">
-                    <div class="tip-box-title">📷
-                        <span class="lang-cn">拍摄建议</span>
-                        <span class="lang-en">Photo Tips</span>
+                <!-- Step 2.2 -->
+                <div class="step-block">
+                    <div class="step-content">
+                        <h3>
+                            <span class="lang-cn">查看识别结果</span>
+                            <span class="lang-en">View Results</span>
+                        </h3>
+                        <p>
+                            <span class="lang-cn">AI 会在 <strong>1-2
+                                    秒内完成识别</strong>，完全离线运行，无需网络。识别结果显示多个候选鸟种及其置信度。</span>
+                            <span class="lang-en">AI identifies in <strong>1-2 seconds</strong>, completely offline.
+                                Results show candidate species with confidence scores.</span>
+                        </p>
+                        <div class="table-container">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            <span class="lang-cn">置信度</span>
+                                            <span class="lang-en">Confidence</span>
+                                        </th>
+                                        <th>
+                                            <span class="lang-cn">含义</span>
+                                            <span class="lang-en">Meaning</span>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>90%+</td>
+                                        <td>
+                                            <span class="lang-cn">非常确定，可以直接采用</span>
+                                            <span class="lang-en">Very confident</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>70-90%</td>
+                                        <td>
+                                            <span class="lang-cn">比较确定，建议核对</span>
+                                            <span class="lang-en">Fairly confident</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>&lt;70%</td>
+                                        <td>
+                                            <span class="lang-cn">建议手动确认</span>
+                                            <span class="lang-en">Verify manually</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-                    <p>
-                        <span class="lang-cn">建议使用系统相机拍摄高清照片。作为专业摄影师，我在训练 AI
-                            模型时主要使用后期处理的高清大图，因此相机拍摄的图片识别效果最佳。</span>
-                        <span class="lang-en">Use your system camera for best results. As a professional photographer, I
-                            trained the AI with high-resolution processed photos.</span>
-                    </p>
-                </div>
-
-                <h3>
-                    <span class="lang-cn">查看识别结果</span>
-                    <span class="lang-en">View Results</span>
-                </h3>
-                <p>
-                    <span class="lang-cn">AI 会在 <strong>1-2 秒内完成识别</strong>，完全离线运行，无需网络。识别结果显示多个候选鸟种及其置信度。</span>
-                    <span class="lang-en">AI identifies in <strong>1-2 seconds</strong>, completely offline. Results
-                        show candidate species with confidence scores.</span>
-                </p>
-
-                <div class="screenshot-container">
-                    <img src="img/screenshoot/识鸟结果.png" alt="识别结果" class="screenshot">
-                    <div class="screenshot-caption">
-                        <span class="lang-cn">红头鸲鹟 - 置信度 91%</span>
-                        <span class="lang-en">Red-capped Robin - 91% confidence</span>
-                    </div>
-                </div>
-
-                <div class="table-container">
-                    <table class="data-table">
-                        <thead>
-                            <tr>
-                                <th>
-                                    <span class="lang-cn">置信度</span>
-                                    <span class="lang-en">Confidence</span>
-                                </th>
-                                <th>
-                                    <span class="lang-cn">含义</span>
-                                    <span class="lang-en">Meaning</span>
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>90%+</td>
-                                <td>
-                                    <span class="lang-cn">非常确定，可以直接采用</span>
-                                    <span class="lang-en">Very confident, use directly</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>70-90%</td>
-                                <td>
-                                    <span class="lang-cn">比较确定，建议核对特征</span>
-                                    <span class="lang-en">Fairly confident, verify features</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>50-70%</td>
-                                <td>
-                                    <span class="lang-cn">不太确定，请仔细比对</span>
-                                    <span class="lang-en">Less certain, compare carefully</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>&lt;50%</td>
-                                <td>
-                                    <span class="lang-cn">建议手动确认或重新拍摄</span>
-                                    <span class="lang-en">Manual verification recommended</span>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <h3>
-                    <span class="lang-cn">eBird 地区过滤</span>
-                    <span class="lang-en">eBird Region Filter</span>
-                </h3>
-                <p>
-                    <span class="lang-cn">开启 eBird 过滤后，系统会优先显示该地区常见的鸟种，提高识别准确率。系统会记住你的预设。</span>
-                    <span class="lang-en">Enable eBird filter to prioritize local species. Your preference will be
-                        saved.</span>
-                </p>
-
-                <div class="screenshot-container">
-                    <img src="img/screenshoot/05_ebird.png" alt="eBird选择" class="screenshot">
-                    <div class="screenshot-caption">
-                        <span class="lang-cn">选择国家/地区</span>
-                        <span class="lang-en">Select Country/Region</span>
+                    <div class="step-image">
+                        <img src="img/screenshoot/识鸟结果.png" alt="识别结果" class="screenshot">
+                        <div class="screenshot-caption">
+                            <span class="lang-cn">红头鸲鹟 - 91%</span>
+                            <span class="lang-en">Red-capped Robin - 91%</span>
+                        </div>
                     </div>
                 </div>
 
-                <h3>
-                    <span class="lang-cn">手动修正</span>
-                    <span class="lang-en">Manual Edit</span>
-                </h3>
-                <p>
-                    <span class="lang-cn">如果照片中有多只鸟或识别不准确，可以点击"编辑识别框"手动调整，或直接手动输入鸟种名称。</span>
-                    <span class="lang-en">Edit detection box or manually input species name if needed.</span>
-                </p>
+                <!-- Step 2.3 -->
+                <div class="step-block reverse">
+                    <div class="step-content">
+                        <h3>
+                            <span class="lang-cn">eBird 地区过滤</span>
+                            <span class="lang-en">eBird Region Filter</span>
+                        </h3>
+                        <p>
+                            <span class="lang-cn">开启 eBird 过滤后，系统会优先显示该地区常见的鸟种，提高识别准确率。系统会记住你的预设。</span>
+                            <span class="lang-en">Enable eBird filter to prioritize local species. Your preference will
+                                be saved.</span>
+                        </p>
+                    </div>
+                    <div class="step-image">
+                        <img src="img/screenshoot/05_ebird.png" alt="eBird选择" class="screenshot">
+                        <div class="screenshot-caption">
+                            <span class="lang-cn">选择国家/地区</span>
+                            <span class="lang-en">Select Country/Region</span>
+                        </div>
+                    </div>
+                </div>
 
-                <div class="screenshot-container">
-                    <img src="img/screenshoot/06_edit_box.png" alt="编辑识别框" class="screenshot">
-                    <div class="screenshot-caption">
-                        <span class="lang-cn">调整识别区域</span>
-                        <span class="lang-en">Adjust Detection Area</span>
+                <!-- Step 2.4 -->
+                <div class="step-block">
+                    <div class="step-content">
+                        <h3>
+                            <span class="lang-cn">手动修正</span>
+                            <span class="lang-en">Manual Edit</span>
+                        </h3>
+                        <p>
+                            <span class="lang-cn">如果照片中有多只鸟或识别不准确，可以点击"编辑识别框"手动调整识别区域，或直接手动输入鸟种名称。</span>
+                            <span class="lang-en">Edit detection box or manually input species name if needed.</span>
+                        </p>
+                    </div>
+                    <div class="step-image">
+                        <img src="img/screenshoot/06_edit_box.png" alt="编辑识别框" class="screenshot">
+                        <div class="screenshot-caption">
+                            <span class="lang-cn">调整识别区域</span>
+                            <span class="lang-en">Adjust Detection Area</span>
+                        </div>
                     </div>
                 </div>
             </section>
 
             <!-- Section 3: Save Records -->
             <section class="tutorial-section" id="save">
-                <h2>
+                <div class="section-header">
                     <span class="section-number">3</span>
-                    <span class="lang-cn">保存记录</span>
-                    <span class="lang-en">Save Records</span>
-                </h2>
+                    <h2>
+                        <span class="lang-cn">保存记录</span>
+                        <span class="lang-en">Save Records</span>
+                    </h2>
+                </div>
 
-                <h3>
-                    <span class="lang-cn">自动提取信息</span>
-                    <span class="lang-en">Auto-Extract Info</span>
-                </h3>
-                <p>
-                    <span class="lang-cn">确认鸟种后，系统会自动从照片 EXIF 提取 GPS 位置、拍摄时间和曝光参数（光圈、快门、ISO）。</span>
-                    <span class="lang-en">After confirmation, GPS location, capture time and exposure data are
-                        auto-extracted from EXIF.</span>
-                </p>
-
-                <div class="screenshot-container">
-                    <img src="img/screenshoot/07_save.png" alt="保存记录" class="screenshot">
-                    <div class="screenshot-caption">
-                        <span class="lang-cn">保存观鸟记录</span>
-                        <span class="lang-en">Save Bird Sighting</span>
+                <!-- Step 3.1 -->
+                <div class="step-block reverse">
+                    <div class="step-content">
+                        <h3>
+                            <span class="lang-cn">自动提取信息</span>
+                            <span class="lang-en">Auto-Extract Info</span>
+                        </h3>
+                        <p>
+                            <span class="lang-cn">确认鸟种后，系统会自动从照片 EXIF 提取 GPS 位置、拍摄时间和曝光参数（光圈、快门、ISO）。</span>
+                            <span class="lang-en">After confirmation, GPS location, capture time and exposure data are
+                                auto-extracted from EXIF.</span>
+                        </p>
+                        <div class="important-box">
+                            <div class="important-box-title">⚠️
+                                <span class="lang-cn">GPS 的重要性</span>
+                                <span class="lang-en">GPS Importance</span>
+                            </div>
+                            <p>
+                                <span class="lang-cn">没有地点信息的记录在统计分析中价值大打折扣。养成保留照片 GPS 信息的习惯。</span>
+                                <span class="lang-en">Records without location data have limited value. Keep GPS
+                                    enabled.</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="step-image">
+                        <img src="img/screenshoot/07_save.png" alt="保存记录" class="screenshot">
+                        <div class="screenshot-caption">
+                            <span class="lang-cn">保存观鸟记录</span>
+                            <span class="lang-en">Save Bird Sighting</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="important-box">
-                    <div class="important-box-title">⚠️
-                        <span class="lang-cn">GPS 的重要性</span>
-                        <span class="lang-en">GPS Importance</span>
+                <!-- Step 3.2 -->
+                <div class="step-block">
+                    <div class="step-content">
+                        <h3>
+                            <span class="lang-cn">手动选择地点</span>
+                            <span class="lang-en">Manual Location</span>
+                        </h3>
+                        <p>
+                            <span class="lang-cn">如果照片没有 GPS，可以搜索地点或在地图上手动选点。</span>
+                            <span class="lang-en">If no GPS, search for location or pick on map.</span>
+                        </p>
+                        <div class="tip-box">
+                            <div class="tip-box-title">🔒
+                                <span class="lang-cn">隐私保护</span>
+                                <span class="lang-en">Privacy Protection</span>
+                            </div>
+                            <p>
+                                <span class="lang-cn">分享到社区时不会上传精确 GPS 坐标，备注内容也不会上传，仅保存在本地。</span>
+                                <span class="lang-en">Precise GPS and notes are never uploaded, stored locally
+                                    only.</span>
+                            </p>
+                        </div>
                     </div>
-                    <p>
-                        <span class="lang-cn">没有地点信息的记录在统计分析中价值大打折扣。养成保留照片 GPS 信息的习惯，是科学观鸟的第一步。</span>
-                        <span class="lang-en">Records without location data have limited value in statistics. Keep GPS
-                            enabled for scientific birding.</span>
-                    </p>
-                </div>
-
-                <h3>
-                    <span class="lang-cn">手动选择地点</span>
-                    <span class="lang-en">Manual Location</span>
-                </h3>
-                <p>
-                    <span class="lang-cn">如果照片没有 GPS，可以搜索地点或在地图上手动选点。</span>
-                    <span class="lang-en">If no GPS, search for location or pick on map.</span>
-                </p>
-
-                <div class="screenshot-container">
-                    <img src="img/screenshoot/08_map.png" alt="地图选点" class="screenshot">
-                    <div class="screenshot-caption">
-                        <span class="lang-cn">地图选点</span>
-                        <span class="lang-en">Pick on Map</span>
+                    <div class="step-image">
+                        <img src="img/screenshoot/08_map.png" alt="地图选点" class="screenshot">
+                        <div class="screenshot-caption">
+                            <span class="lang-cn">地图选点</span>
+                            <span class="lang-en">Pick on Map</span>
+                        </div>
                     </div>
-                </div>
-
-                <div class="tip-box">
-                    <div class="tip-box-title">🔒
-                        <span class="lang-cn">隐私保护</span>
-                        <span class="lang-en">Privacy Protection</span>
-                    </div>
-                    <p>
-                        <span class="lang-cn">分享到社区时不会上传精确 GPS 坐标，备注内容也不会上传，仅保存在本地。</span>
-                        <span class="lang-en">Precise GPS and notes are never uploaded to community, stored locally
-                            only.</span>
-                    </p>
                 </div>
             </section>
 
             <!-- Section 4: My Records -->
             <section class="tutorial-section" id="records">
-                <h2>
+                <div class="section-header">
                     <span class="section-number">4</span>
-                    <span class="lang-cn">我的记录</span>
-                    <span class="lang-en">My Records</span>
-                </h2>
+                    <h2>
+                        <span class="lang-cn">我的记录</span>
+                        <span class="lang-en">My Records</span>
+                    </h2>
+                </div>
 
-                <h3>
-                    <span class="lang-cn">瀑布流浏览</span>
-                    <span class="lang-en">Waterfall Layout</span>
-                </h3>
-                <p>
-                    <span class="lang-cn">"我的"页面以瀑布流形式展示所有观鸟记录，双列布局，图片自适应高度。生涯新种会有皇冠标记。</span>
-                    <span class="lang-en">"My" page displays all records in waterfall layout. Life birds are marked with
-                        crowns.</span>
-                </p>
-
-                <div class="screenshot-container">
-                    <img src="img/screenshoot/09_my_records.png" alt="我的记录" class="screenshot">
-                    <div class="screenshot-caption">
-                        <span class="lang-cn">我的观鸟记录</span>
-                        <span class="lang-en">My Bird Sightings</span>
+                <!-- Step 4.1 -->
+                <div class="step-block reverse">
+                    <div class="step-content">
+                        <h3>
+                            <span class="lang-cn">瀑布流浏览</span>
+                            <span class="lang-en">Waterfall Layout</span>
+                        </h3>
+                        <p>
+                            <span class="lang-cn">"我的"页面以瀑布流形式展示所有观鸟记录，双列布局，图片自适应高度。生涯新种会有皇冠标记。</span>
+                            <span class="lang-en">"My" page displays all records in waterfall layout. Life birds are
+                                marked with crowns.</span>
+                        </p>
+                    </div>
+                    <div class="step-image">
+                        <img src="img/screenshoot/09_my_records.png" alt="我的记录" class="screenshot">
+                        <div class="screenshot-caption">
+                            <span class="lang-cn">我的观鸟记录</span>
+                            <span class="lang-en">My Bird Sightings</span>
+                        </div>
                     </div>
                 </div>
 
-                <h3>
-                    <span class="lang-cn">记录详情</span>
-                    <span class="lang-en">Record Details</span>
-                </h3>
-                <p>
-                    <span class="lang-cn">点击卡片查看详情，本地画质比云端高一倍以上。可以打开 Apple 地图或 Google 地图导航到拍摄地点。</span>
-                    <span class="lang-en">Tap card for details. Local quality is 2x better than cloud. Navigate with
-                        Apple or Google Maps.</span>
-                </p>
-
-                <div class="screenshot-container">
-                    <img src="img/screenshoot/10_detail.png" alt="记录详情" class="screenshot">
-                    <div class="screenshot-caption">
-                        <span class="lang-cn">观鸟记录详情</span>
-                        <span class="lang-en">Sighting Details</span>
+                <!-- Step 4.2 -->
+                <div class="step-block">
+                    <div class="step-content">
+                        <h3>
+                            <span class="lang-cn">记录详情</span>
+                            <span class="lang-en">Record Details</span>
+                        </h3>
+                        <p>
+                            <span class="lang-cn">点击卡片查看详情，本地画质比云端高一倍以上。可以打开 Apple 地图或 Google 地图导航到拍摄地点。</span>
+                            <span class="lang-en">Tap card for details. Local quality is 2x better than cloud. Navigate
+                                with Apple or Google Maps.</span>
+                        </p>
+                        <div class="tip-box">
+                            <div class="tip-box-title">👑
+                                <span class="lang-cn">生涯新种 (Life Bird)</span>
+                                <span class="lang-en">Life Bird</span>
+                            </div>
+                            <p>
+                                <span class="lang-cn">"生涯新种"指你人生中第一次拍摄到的鸟种，按<strong>拍摄时间</strong>判定，与添加时间无关。</span>
+                                <span class="lang-en">"Life Bird" is a species you photographed for the first time,
+                                    determined by <strong>capture time</strong>.</span>
+                            </p>
+                        </div>
                     </div>
-                </div>
-
-                <h3>
-                    <span class="lang-cn">生涯新种 (Life Bird)</span>
-                    <span class="lang-en">Life Bird</span>
-                </h3>
-                <p>
-                    <span class="lang-cn">"生涯新种"指你人生中第一次拍摄到的鸟种，按<strong>拍摄时间</strong>判定，与添加时间无关。</span>
-                    <span class="lang-en">"Life Bird" is a species you photographed for the first time, determined by
-                        <strong>capture time</strong>.</span>
-                </p>
-                <div class="tip-box">
-                    <div class="tip-box-title">👑
-                        <span class="lang-cn">生涯新种逻辑</span>
-                        <span class="lang-en">Life Bird Logic</span>
+                    <div class="step-image">
+                        <img src="img/screenshoot/10_detail.png" alt="记录详情" class="screenshot">
+                        <div class="screenshot-caption">
+                            <span class="lang-cn">观鸟记录详情</span>
+                            <span class="lang-en">Sighting Details</span>
+                        </div>
                     </div>
-                    <p>
-                        <span class="lang-cn">如果你找到一张更早时间拍摄的同鸟种照片，它会取代当前的生涯新种记录，和添加时间无关。</span>
-                        <span class="lang-en">An earlier photo of the same species will replace the current life bird
-                            record.</span>
-                    </p>
                 </div>
             </section>
 
             <!-- Section 5: Statistics -->
             <section class="tutorial-section" id="stats">
-                <h2>
+                <div class="section-header">
                     <span class="section-number">5</span>
-                    <span class="lang-cn">统计分析</span>
-                    <span class="lang-en">Statistics</span>
-                </h2>
+                    <h2>
+                        <span class="lang-cn">统计分析</span>
+                        <span class="lang-en">Statistics</span>
+                    </h2>
+                </div>
 
-                <h3>
-                    <span class="lang-cn">数据总览</span>
-                    <span class="lang-en">Overview</span>
-                </h3>
-                <p>
-                    <span class="lang-cn">统计页面显示总记录数、鸟种数、生涯新种数、国家数等核心数据，可按时间范围筛选。</span>
-                    <span class="lang-en">Stats page shows total records, species count, life birds, and countries.
-                        Filter by time range.</span>
-                </p>
-
-                <div class="screenshot-container">
-                    <img src="img/screenshoot/11_stats.png" alt="统计分析" class="screenshot">
-                    <div class="screenshot-caption">
-                        <span class="lang-cn">统计分析页面</span>
-                        <span class="lang-en">Statistics Page</span>
+                <!-- Step 5.1 -->
+                <div class="step-block reverse">
+                    <div class="step-content">
+                        <h3>
+                            <span class="lang-cn">数据总览</span>
+                            <span class="lang-en">Overview</span>
+                        </h3>
+                        <p>
+                            <span class="lang-cn">统计页面显示总记录数、鸟种数、生涯新种数、国家数等核心数据，可按时间范围筛选。</span>
+                            <span class="lang-en">Stats page shows total records, species count, life birds, and
+                                countries. Filter by time range.</span>
+                        </p>
+                    </div>
+                    <div class="step-image">
+                        <img src="img/screenshoot/11_stats.png" alt="统计分析" class="screenshot">
+                        <div class="screenshot-caption">
+                            <span class="lang-cn">统计分析页面</span>
+                            <span class="lang-en">Statistics Page</span>
+                        </div>
                     </div>
                 </div>
 
-                <h3>
-                    <span class="lang-cn">世界地图</span>
-                    <span class="lang-en">World Map</span>
-                </h3>
-                <p>
-                    <span class="lang-cn">在地图上查看你的观鸟足迹。<strong>放大地图后，绿色标记会变成你拍摄的鸟类缩略图</strong>。</span>
-                    <span class="lang-en">View your birding footprint on map. <strong>Zoom in to see bird thumbnails
-                            instead of green markers</strong>.</span>
-                </p>
-
-                <div class="screenshot-container">
-                    <img src="img/screenshoot/12_world_map.png" alt="世界地图" class="screenshot">
-                    <div class="screenshot-caption">
-                        <span class="lang-cn">放大后显示鸟类缩略图</span>
-                        <span class="lang-en">Thumbnails when zoomed in</span>
+                <!-- Step 5.2 -->
+                <div class="step-block">
+                    <div class="step-content">
+                        <h3>
+                            <span class="lang-cn">世界地图</span>
+                            <span class="lang-en">World Map</span>
+                        </h3>
+                        <p>
+                            <span class="lang-cn">在地图上查看你的观鸟足迹。<strong>放大地图后，绿色标记会变成你拍摄的鸟类缩略图</strong>。</span>
+                            <span class="lang-en">View your birding footprint on map. <strong>Zoom in to see bird
+                                    thumbnails instead of green markers</strong>.</span>
+                        </p>
+                    </div>
+                    <div class="step-image">
+                        <img src="img/screenshoot/12_world_map.png" alt="世界地图" class="screenshot">
+                        <div class="screenshot-caption">
+                            <span class="lang-cn">放大后显示缩略图</span>
+                            <span class="lang-en">Thumbnails when zoomed</span>
+                        </div>
                     </div>
                 </div>
 
-                <h3>
-                    <span class="lang-cn">年度报告</span>
-                    <span class="lang-en">Yearly Report</span>
-                </h3>
-                <p>
-                    <span class="lang-cn">生成你的专属年度观鸟回顾，包含年度总结数据、亮点鸟种、观鸟地图，可保存为图片分享。</span>
-                    <span class="lang-en">Generate your annual birding summary with highlights, and save as image to
-                        share.</span>
-                </p>
-
-                <div class="screenshot-container">
-                    <img src="img/screenshoot/13_yearly.png" alt="年度报告" class="screenshot">
-                    <div class="screenshot-caption">
-                        <span class="lang-cn">年度观鸟报告</span>
-                        <span class="lang-en">Yearly Birding Report</span>
+                <!-- Step 5.3 -->
+                <div class="step-block reverse">
+                    <div class="step-content">
+                        <h3>
+                            <span class="lang-cn">年度报告</span>
+                            <span class="lang-en">Yearly Report</span>
+                        </h3>
+                        <p>
+                            <span class="lang-cn">生成你的专属年度观鸟回顾，包含年度总结数据、亮点鸟种、观鸟地图，可保存为图片分享。</span>
+                            <span class="lang-en">Generate your annual birding summary with highlights, and save as
+                                image to share.</span>
+                        </p>
+                    </div>
+                    <div class="step-image">
+                        <img src="img/screenshoot/13_yearly.png" alt="年度报告" class="screenshot">
+                        <div class="screenshot-caption">
+                            <span class="lang-cn">年度观鸟报告</span>
+                            <span class="lang-en">Yearly Report</span>
+                        </div>
                     </div>
                 </div>
             </section>
 
             <!-- Section 6: Community -->
             <section class="tutorial-section" id="community">
-                <h2>
+                <div class="section-header">
                     <span class="section-number">6</span>
-                    <span class="lang-cn">社区鸟讯</span>
-                    <span class="lang-en">Community</span>
-                </h2>
-
-                <h3>
-                    <span class="lang-cn">浏览与互动</span>
-                    <span class="lang-en">Browse & Interact</span>
-                </h3>
-                <p>
-                    <span class="lang-cn">"鸟讯"是慧眼观鸟的社区功能，浏览其他观鸟爱好者分享的记录，发现新鸟种，点赞优秀照片。</span>
-                    <span class="lang-en">"NEWS" is the community feature. Browse others' sightings, discover species,
-                        and like great photos.</span>
-                </p>
-
-                <div class="screenshot-container">
-                    <img src="img/screenshoot/14_community.png" alt="社区鸟讯" class="screenshot">
-                    <div class="screenshot-caption">
+                    <h2>
                         <span class="lang-cn">社区鸟讯</span>
-                        <span class="lang-en">Community Feed</span>
-                    </div>
+                        <span class="lang-en">Community</span>
+                    </h2>
                 </div>
 
-                <div class="important-box">
-                    <div class="important-box-title">☁️
-                        <span class="lang-cn">数据存储说明</span>
-                        <span class="lang-en">Data Storage</span>
+                <!-- Step 6.1 -->
+                <div class="step-block">
+                    <div class="step-content">
+                        <h3>
+                            <span class="lang-cn">浏览与互动</span>
+                            <span class="lang-en">Browse & Interact</span>
+                        </h3>
+                        <p>
+                            <span class="lang-cn">"鸟讯"是慧眼观鸟的社区功能，浏览其他观鸟爱好者分享的记录，发现新鸟种，点赞优秀照片。</span>
+                            <span class="lang-en">"NEWS" is the community feature. Browse others' sightings, discover
+                                species, and like great photos.</span>
+                        </p>
+                        <div class="important-box">
+                            <div class="important-box-title">☁️
+                                <span class="lang-cn">数据存储说明</span>
+                                <span class="lang-en">Data Storage</span>
+                            </div>
+                            <p>
+                                <span class="lang-cn">社区数据存储在苹果公司提供的 iCloud 云服务上，与慧眼观鸟应用本身无关。</span>
+                                <span class="lang-en">Community data is stored on Apple's iCloud servers via CloudKit,
+                                    not by SuperBirder.</span>
+                            </p>
+                        </div>
                     </div>
-                    <p>
-                        <span class="lang-cn">社区数据存储在苹果公司提供的 iCloud 云服务上，与慧眼观鸟应用本身无关。作为独立开发者，我选择使用苹果官方的 CloudKit
-                            服务。</span>
-                        <span class="lang-en">Community data is stored on Apple's iCloud servers via CloudKit, not by
-                            SuperBirder.</span>
-                    </p>
+                    <div class="step-image">
+                        <img src="img/screenshoot/14_community.png" alt="社区鸟讯" class="screenshot">
+                        <div class="screenshot-caption">
+                            <span class="lang-cn">社区鸟讯</span>
+                            <span class="lang-en">Community Feed</span>
+                        </div>
+                    </div>
                 </div>
             </section>
 
             <!-- Section 7: Settings -->
             <section class="tutorial-section" id="settings">
-                <h2>
+                <div class="section-header">
                     <span class="section-number">7</span>
-                    <span class="lang-cn">设置管理</span>
-                    <span class="lang-en">Settings</span>
-                </h2>
-
-                <h3>
-                    <span class="lang-cn">个人资料与偏好</span>
-                    <span class="lang-en">Profile & Preferences</span>
-                </h3>
-                <p>
-                    <span class="lang-cn">在设置页面可以修改昵称和头像、设置默认排序方式、设置是否默认分享到社区。</span>
-                    <span class="lang-en">Manage nickname, avatar, default sorting, and sharing preferences.</span>
-                </p>
-
-                <div class="screenshot-container">
-                    <img src="img/screenshoot/15_settings.png" alt="设置页面" class="screenshot">
-                    <div class="screenshot-caption">
-                        <span class="lang-cn">设置页面</span>
+                    <h2>
+                        <span class="lang-cn">设置管理</span>
                         <span class="lang-en">Settings</span>
-                    </div>
+                    </h2>
                 </div>
 
-                <h3>
-                    <span class="lang-cn">备份与恢复</span>
-                    <span class="lang-en">Backup & Restore</span>
-                </h3>
-                <p>
-                    <span class="lang-cn">创建本地备份（包含数据库、照片、设置），可以导出分享或在新设备上恢复。</span>
-                    <span class="lang-en">Create local backup (database, photos, settings), export or restore on new
-                        device.</span>
-                </p>
-
-                <div class="feature-list">
-                    <div class="feature-item">
-                        <strong>
-                            <span class="lang-cn">创建备份</span>
-                            <span class="lang-en">Create Backup</span>
-                        </strong>
-                        <span>
-                            <span class="lang-cn">设置 → 备份与恢复 → 创建备份</span>
-                            <span class="lang-en">Settings → Backup → Create</span>
-                        </span>
+                <!-- Step 7.1 -->
+                <div class="step-block reverse">
+                    <div class="step-content">
+                        <h3>
+                            <span class="lang-cn">个人资料与偏好</span>
+                            <span class="lang-en">Profile & Preferences</span>
+                        </h3>
+                        <p>
+                            <span class="lang-cn">在设置页面可以修改昵称和头像、设置默认排序方式、设置是否默认分享到社区。</span>
+                            <span class="lang-en">Manage nickname, avatar, default sorting, and sharing
+                                preferences.</span>
+                        </p>
+                        <div class="feature-grid">
+                            <div class="feature-item">
+                                <strong>
+                                    <span class="lang-cn">创建备份</span>
+                                    <span class="lang-en">Create Backup</span>
+                                </strong>
+                                <span>
+                                    <span class="lang-cn">设置 → 备份与恢复 → 创建备份</span>
+                                    <span class="lang-en">Settings → Backup → Create</span>
+                                </span>
+                            </div>
+                            <div class="feature-item">
+                                <strong>
+                                    <span class="lang-cn">恢复备份</span>
+                                    <span class="lang-en">Restore Backup</span>
+                                </strong>
+                                <span>
+                                    <span class="lang-cn">选择备份文件 → 恢复 → 重启</span>
+                                    <span class="lang-en">Select backup → Restore → Restart</span>
+                                </span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="feature-item">
-                        <strong>
-                            <span class="lang-cn">恢复备份</span>
-                            <span class="lang-en">Restore Backup</span>
-                        </strong>
-                        <span>
-                            <span class="lang-cn">选择备份文件 → 恢复 → 重启应用</span>
-                            <span class="lang-en">Select backup → Restore → Restart</span>
-                        </span>
+                    <div class="step-image">
+                        <img src="img/screenshoot/15_settings.png" alt="设置页面" class="screenshot">
+                        <div class="screenshot-caption">
+                            <span class="lang-cn">设置页面</span>
+                            <span class="lang-en">Settings</span>
+                        </div>
                     </div>
                 </div>
             </section>
