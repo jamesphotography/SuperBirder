@@ -526,6 +526,23 @@
                 <div class="faq-item">
                     <button class="faq-question" onclick="toggleFaq(this)">
                         <span>
+                            <span class="lang-cn">使用什么 AI 识鸟模型？支持识别多少种鸟类？</span>
+                            <span class="lang-en">What AI model is used, and how many species are supported?</span>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>
+                                <span class="lang-cn">慧眼观鸟采用 <strong>BirdTrace FastViT-MA36</strong> 混合视觉 Transformer 模型，并结合 <strong>YOLO11m</strong> 目标检测定位器，覆盖全球权威 <strong>10,480 种</strong> 鸟类物种。模型全量部署在 iPhone 本地 Apple Neural Engine（ANE 神经网络引擎），100% 离线运行、无需网络、毫秒级推断，并融合 GPS 地理先验加权，有效降低相似鸟种误判。</span>
+                                <span class="lang-en">SuperBirder uses the on-device <strong>BirdTrace FastViT-MA36</strong> Hybrid Vision Transformer combined with <strong>YOLO11m</strong> object detection, covering <strong>10,480 bird species</strong> globally. Fully deployed on the Apple Neural Engine (ANE), it runs 100% offline with millisecond latency and GPS geo-prior weighting.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>
                             <span class="lang-cn">识别需要联网吗？</span>
                             <span class="lang-en">Does identification require internet?</span>
                         </span>

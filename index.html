@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SuperBirder - 慧眼观鸟 | AI Bird Identification</title>
-    <meta name="description" content="AI智能鸟类识别应用 - 10,964种鸟类全离线识别，四大核心模式（相册识鸟/闪识实时/望远镜单筒/相机联机拍），用记录见证观鸟旅程。AI-powered bird identification app with 4 flagship modes.">
+    <meta name="description" content="AI智能鸟类识别应用 - 10,480种鸟类全离线识别，四大核心模式（相册识鸟/闪识实时/望远镜单筒/相机联机拍），用记录见证观鸟旅程。AI-powered bird identification app with 4 flagship modes.">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="img/icon.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -56,7 +56,7 @@
             <!-- Stats -->
             <div class="hero-stats">
                 <div class="stat-item">
-                    <div class="stat-number">10,964</div>
+                    <div class="stat-number">10,480</div>
                     <div class="stat-label">
                         <span class="lang-cn">鸟类物种</span>
                         <span class="lang-en">Bird Species</span>
@@ -143,19 +143,17 @@
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-number">01</div>
-                    <div class="feature-icon">🖼️</div>
                     <h3>
                         <span class="lang-cn">相册识鸟</span>
                         <span class="lang-en">Photo ID</span>
                     </h3>
                     <p>
-                        <span class="lang-cn">离线 CoreML 原生大模型，覆盖 10,964 种鸟类。智能主体感知裁切，结合 GPS 地理优先加权，深山无网也能 1 秒秒识。</span>
-                        <span class="lang-en">Offline native CoreML model covering 10,964 bird species. Saliency auto-crop & GPS geo-weighting for instant offline identification.</span>
+                        <span class="lang-cn">离线 CoreML 原生大模型，覆盖全球 10,480 种鸟类。智能主体感知裁切，结合 GPS 地理优先加权，深山无网也能 1 秒秒识。</span>
+                        <span class="lang-en">Offline native CoreML model covering 10,480 bird species. Saliency auto-crop & GPS geo-weighting for instant offline identification.</span>
                     </p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-number">02</div>
-                    <div class="feature-icon">⚡</div>
                     <h3>
                         <span class="lang-cn">闪识 · 手机实时</span>
                         <span class="lang-en">Live Camera ID</span>
@@ -167,7 +165,6 @@
                 </div>
                 <div class="feature-card">
                     <div class="feature-number">03</div>
-                    <div class="feature-icon">🔭</div>
                     <h3>
                         <span class="lang-cn">望远镜模式</span>
                         <span class="lang-en">Telescope Mode</span>
@@ -179,7 +176,6 @@
                 </div>
                 <div class="feature-card">
                     <div class="feature-number">04</div>
-                    <div class="feature-icon">📷</div>
                     <h3>
                         <span class="lang-cn">联机拍 · 即拍即传</span>
                         <span class="lang-en">Camera Tethering</span>
@@ -191,7 +187,6 @@
                 </div>
                 <div class="feature-card">
                     <div class="feature-number">05</div>
-                    <div class="feature-icon">📝</div>
                     <h3>
                         <span class="lang-cn">边走边记 · 智能清单</span>
                         <span class="lang-en">Field Checklist</span>
@@ -203,7 +198,6 @@
                 </div>
                 <div class="feature-card">
                     <div class="feature-number">06</div>
-                    <div class="feature-icon">👑</div>
                     <h3>
                         <span class="lang-cn">生涯新鸟</span>
                         <span class="lang-en">Life Birds</span>
@@ -215,7 +209,6 @@
                 </div>
                 <div class="feature-card">
                     <div class="feature-number">07</div>
-                    <div class="feature-icon">🗺️</div>
                     <h3>
                         <span class="lang-cn">观鸟地图与社区</span>
                         <span class="lang-en">Map & Community</span>
@@ -227,7 +220,6 @@
                 </div>
                 <div class="feature-card">
                     <div class="feature-number">08</div>
-                    <div class="feature-icon">📊</div>
                     <h3>
                         <span class="lang-cn">年度回顾报告</span>
                         <span class="lang-en">Yearly Report</span>
@@ -239,7 +231,6 @@
                 </div>
                 <div class="feature-card">
                     <div class="feature-number">09</div>
-                    <div class="feature-icon">💚</div>
                     <h3>
                         <span class="lang-cn">真永久免费</span>
                         <span class="lang-en">Truly Free Forever</span>
@@ -247,6 +238,80 @@
                     <p>
                         <span class="lang-cn">纯粹观鸟情怀：零广告、无 VIP、无订阅内购、无任何套路，离线数据本地安全存储。</span>
                         <span class="lang-en">Built purely for birders: zero ads, no VIP, no subscriptions, no paywalls, and 100% offline local privacy.</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Model & Technology Section -->
+    <section class="model-section" id="model">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">
+                    <span class="lang-cn">离线 AI 模型架构</span>
+                    <span class="lang-en">Offline AI Architecture</span>
+                </span>
+            </div>
+
+            <div class="model-intro">
+                <div class="model-badge">FastViT-MA36 + YOLO11m</div>
+                <h2>
+                    <span class="lang-cn">端侧双模型引擎 · 10,480 种鸟类全离线识别</span>
+                    <span class="lang-en">On-Device Dual Engine · 10,480 Species Offline</span>
+                </h2>
+                <p class="model-desc">
+                    <span class="lang-cn">专为深山密林、沿海滩涂等无网野外严苛环境打造。全量权重与计算图部署于 iPhone 本地神经网络引擎（Apple Neural Engine），零服务器依赖，毫秒级推断，超低功耗。</span>
+                    <span class="lang-en">Engineered for demanding wilderness birding without cellular reception. Fully deployed on iPhone Apple Neural Engine (ANE) with zero server latency, millisecond inference, and ultra-low power consumption.</span>
+                </p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-number">TECH 01</div>
+                    <h3>
+                        <span class="lang-cn">BirdTrace FastViT-MA36 细粒度分类</span>
+                        <span class="lang-en">FastViT-MA36 Classifier</span>
+                    </h3>
+                    <p>
+                        <span class="lang-cn">采用混合视觉 Transformer 架构（Hybrid Vision Transformer），结合 384×384 高清输入张量与细粒度羽色纹理特征比对，覆盖全球权威 10,480 种鸟类物种。</span>
+                        <span class="lang-en">Hybrid Vision Transformer architecture with 384x384 input resolution for fine-grained plumage feature extraction across 10,480 species globally.</span>
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-number">TECH 02</div>
+                    <h3>
+                        <span class="lang-cn">YOLO11m 显著性目标检测</span>
+                        <span class="lang-en">YOLO11m Object Detector</span>
+                    </h3>
+                    <p>
+                        <span class="lang-cn">端侧毫秒级完成复杂林冠与多杂质背景下的鸟类主体定位，精准裁剪有效区域；同时支持未检出时二次手动自由框选与精细微调。</span>
+                        <span class="lang-en">Millisecond bird localization and auto-cropping in complex canopy backgrounds, with secondary manual crop fallback when birds are hidden.</span>
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-number">TECH 03</div>
+                    <h3>
+                        <span class="lang-cn">Apple Core ML 原生神经加速</span>
+                        <span class="lang-en">Core ML & Neural Engine</span>
+                    </h3>
+                    <p>
+                        <span class="lang-cn">深度挖掘 iPhone A 系列 / M 系列芯片的 Apple Neural Engine（ANE）硬件加速潜能，数十毫秒完成整套检测与分类管线，高效运行不发烫。</span>
+                        <span class="lang-en">Fully leverages Apple Neural Engine (ANE) hardware acceleration. The entire detection and classification pipeline finishes in tens of milliseconds efficiently.</span>
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-number">TECH 04</div>
+                    <h3>
+                        <span class="lang-cn">GPS 经纬度地理先验加权</span>
+                        <span class="lang-en">GPS Geographic Geo-Weighting</span>
+                    </h3>
+                    <p>
+                        <span class="lang-cn">融合全球 eBird 省州级物种分布数据库与季节频率，在纯视觉概率输出之上叠加地理贝叶斯先验加权，有效消除近缘易混种误判。</span>
+                        <span class="lang-en">Integrates global eBird regional checklist frequency and seasonal priors to re-weight visual probabilities, significantly reducing misidentification among lookalike species.</span>
                     </p>
                 </div>
             </div>
@@ -272,24 +337,24 @@
                 </div>
                 <ul class="version-list">
                     <li>
-                        <span class="lang-cn"><strong>🔭 望远镜模式</strong>：支持 USB-C / HDMI 采集卡直连大炮长焦相机与单筒望远镜，1080p 60fps 实时视网膜级高清取景，支持 1x-3x 触控数码变焦与一键截帧存相册</span>
+                        <span class="lang-cn"><strong>望远镜模式</strong>：支持 USB-C / HDMI 采集卡直连大炮长焦相机与单筒望远镜，1080p 60fps 实时视网膜级高清取景，支持 1x-3x 触控数码变焦与一键截帧存相册</span>
                         <span class="lang-en"><strong>Telescope Mode</strong>: USB-C / HDMI direct connect to spotting scopes and telephoto cameras with 1080p 60fps live view, 1x-3x digital zoom, and instant screenshot capture</span>
                     </li>
                     <li>
-                        <span class="lang-cn"><strong>⚡ 闪识实时识别</strong>：手机摄像头超长焦直接对准鸟类，FastViT-MA36 毫秒级动态追踪推断，支持自动语音播报鸟名</span>
+                        <span class="lang-cn"><strong>闪识实时识别</strong>：手机摄像头超长焦直接对准鸟类，FastViT-MA36 毫秒级动态追踪推断，支持自动语音播报鸟名</span>
                         <span class="lang-en"><strong>Live Camera ID</strong>: Aim iPhone camera directly at birds with FastViT-MA36 realtime tracking and voice announcement</span>
                     </li>
                     <li>
-                        <span class="lang-cn"><strong>📷 联机拍全面进阶</strong>：尼康 / 索尼微单即拍即传，新增 iPhone 个人热点微流量心跳防休眠；新增远距隐蔽鸟类二次手动自由裁切与重选</span>
+                        <span class="lang-cn"><strong>联机拍全面进阶</strong>：尼康 / 索尼微单即拍即传，新增 iPhone 个人热点微流量心跳防休眠；新增远距隐蔽鸟类二次手动自由裁切与重选</span>
                         <span class="lang-en"><strong>Camera Tethering Upgrade</strong>: Instant Nikon/Sony tethering with hotspot keep-alive heartbeat and secondary manual crop fallback for distant birds</span>
                     </li>
                     <li>
-                        <span class="lang-cn"><strong>📝 边走边记智能清单</strong>：按时间与足迹自动聚合，快速打勾记录鸟种初见，野外观鸟更轻松</span>
+                        <span class="lang-cn"><strong>边走边记智能清单</strong>：按时间与足迹自动聚合，快速打勾记录鸟种初见，野外观鸟更轻松</span>
                         <span class="lang-en"><strong>Field Checklist</strong>: Auto timeline & track aggregation with one-tap tick off recording for field birding</span>
                     </li>
                     <li>
-                        <span class="lang-cn"><strong>🚀 离线模型与体验优化</strong>：全离线 CoreML 升级，10,964 种鸟类毫秒级离线推断，深山无网随时可用</span>
-                        <span class="lang-en"><strong>CoreML Offline Optimization</strong>: 10,964 bird species full offline recognition with zero cellular data required</span>
+                        <span class="lang-cn"><strong>BirdTrace FastViT-MA36 离线模型</strong>：升级 10,480 种鸟类端侧混合视觉 Transformer 模型，深山荒原 100% 离线秒识</span>
+                        <span class="lang-en"><strong>FastViT-MA36 Offline Model</strong>: Upgraded on-device Hybrid Vision Transformer covering 10,480 species with 100% offline capability</span>
                     </li>
                 </ul>
             </div>
