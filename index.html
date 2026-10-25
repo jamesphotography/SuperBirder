@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SuperBirder - 慧眼观鸟 | AI Bird Identification</title>
-    <meta name="description" content="AI智能鸟类识别应用 - 10,964种鸟类识别，用记录见证观鸟旅程。AI-powered bird identification app.">
+    <meta name="description" content="AI智能鸟类识别应用 - 10,964种鸟类全离线识别，四大核心模式（相册识鸟/闪识实时/望远镜单筒/相机联机拍），用记录见证观鸟旅程。AI-powered bird identification app with 4 flagship modes.">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="img/icon.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -63,7 +63,7 @@
                     </div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">V1.0.2</div>
+                    <div class="stat-number">V1.6.2</div>
                     <div class="stat-label">
                         <span class="lang-cn">最新版本</span>
                         <span class="lang-en">Latest Version</span>
@@ -122,7 +122,7 @@
                         <span class="lang-cn">使用教程</span>
                         <span class="lang-en">Tutorial</span>
                     </a>
-                    <a href="#" class="btn btn-ghost btn-coming-soon">
+                    <a href="faq.html" class="btn btn-ghost">
                         <span class="lang-cn">常见问题</span>
                         <span class="lang-en">FAQ</span>
                     </a>
@@ -136,76 +136,117 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-label">
-                    <span class="lang-cn">核心功能</span>
-                    <span class="lang-en">Features</span>
+                    <span class="lang-cn">四大识鸟模式 · 核心功能</span>
+                    <span class="lang-en">4 ID Modes & Features</span>
                 </span>
             </div>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-number">01</div>
+                    <div class="feature-icon">🖼️</div>
                     <h3>
-                        <span class="lang-cn">AI 鸟种识别</span>
-                        <span class="lang-en">AI Bird ID</span>
+                        <span class="lang-cn">相册识鸟</span>
+                        <span class="lang-en">Photo ID</span>
                     </h3>
                     <p>
-                        <span class="lang-cn">离线识别，苹果原生 CoreML 模型，覆盖 10,964 种鸟类</span>
-                        <span class="lang-en">Offline recognition, native Apple CoreML model, covering 10,964 bird
-                            species</span>
+                        <span class="lang-cn">离线 CoreML 原生大模型，覆盖 10,964 种鸟类。智能主体感知裁切，结合 GPS 地理优先加权，深山无网也能 1 秒秒识。</span>
+                        <span class="lang-en">Offline native CoreML model covering 10,964 bird species. Saliency auto-crop & GPS geo-weighting for instant offline identification.</span>
                     </p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-number">02</div>
+                    <div class="feature-icon">⚡</div>
+                    <h3>
+                        <span class="lang-cn">闪识 · 手机实时</span>
+                        <span class="lang-en">Live Camera ID</span>
+                    </h3>
+                    <p>
+                        <span class="lang-cn">手机长焦镜头直接对准鸟类，FastViT-MA36 毫秒级动态追踪预测，自动语音播报鸟名，抬头观鸟无需频繁低头看屏。</span>
+                        <span class="lang-en">Aim your iPhone camera at birds with FastViT-MA36 realtime tracking and automatic voice announcement—keep your eyes on the flock.</span>
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-number">03</div>
+                    <div class="feature-icon">🔭</div>
+                    <h3>
+                        <span class="lang-cn">望远镜模式</span>
+                        <span class="lang-en">Telescope Mode</span>
+                    </h3>
+                    <p>
+                        <span class="lang-cn">USB-C / HDMI 采集卡直连大炮超长焦相机或单筒望远镜，1080p 60fps 实时高清取景，支持 1x-3x 视网膜数码变焦与一键截帧抓拍。</span>
+                        <span class="lang-en">Connect spotting scopes or telephoto cameras via USB-C / HDMI. 1080p 60fps live view, 1x-3x retina zoom, and instant screenshot capture.</span>
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-number">04</div>
+                    <div class="feature-icon">📷</div>
+                    <h3>
+                        <span class="lang-cn">联机拍 · 即拍即传</span>
+                        <span class="lang-en">Camera Tethering</span>
+                    </h3>
+                    <p>
+                        <span class="lang-cn">尼康 / 索尼等微单无线或有线直连，快门一按秒传手机自动识别；内置热点心跳保活防断连，支持二次自由手动框选精细裁切。</span>
+                        <span class="lang-en">Direct Nikon/Sony tethering with auto instant ID. Built-in hotspot keep-alive and secondary manual cropping for camouflaged birds.</span>
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-number">05</div>
+                    <div class="feature-icon">📝</div>
+                    <h3>
+                        <span class="lang-cn">边走边记 · 智能清单</span>
+                        <span class="lang-en">Field Checklist</span>
+                    </h3>
+                    <p>
+                        <span class="lang-cn">智能足迹与时间自动切分，按观测点聚类生成鸟种清单，一键打勾统计初见，彻底告别手写混乱记录。</span>
+                        <span class="lang-en">Smart track and timeline auto-clustering by hotspots. One-tap checklist recording for seamless field birding without pen and paper.</span>
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-number">06</div>
+                    <div class="feature-icon">👑</div>
                     <h3>
                         <span class="lang-cn">生涯新鸟</span>
                         <span class="lang-en">Life Birds</span>
                     </h3>
                     <p>
-                        <span class="lang-cn">皇冠徽章标记生涯新鸟种，见证每一次珍贵的初见</span>
-                        <span class="lang-en">Crown badge marks life birds, celebrate every first sighting</span>
+                        <span class="lang-cn">皇冠徽章专属标记每一次生涯新鸟种首见（Lifer），见证并珍藏你与大自然的每一次珍贵初见。</span>
+                        <span class="lang-en">Crown badge honors every life bird first sighting. Cherish every memorable encounter along your birding journey.</span>
                     </p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-number">03</div>
+                    <div class="feature-number">07</div>
+                    <div class="feature-icon">🗺️</div>
                     <h3>
-                        <span class="lang-cn">年度报告</span>
+                        <span class="lang-cn">观鸟地图与社区</span>
+                        <span class="lang-en">Map & Community</span>
+                    </h3>
+                    <p>
+                        <span class="lang-cn">地图缩略图标记与探索导航，社区鸟讯互动点赞，支持 iCloud 自动多端云同步，多设备无缝切换。</span>
+                        <span class="lang-en">Map thumbnail markers with waypoint navigation, community bird sightings, and seamless multi-device iCloud sync.</span>
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-number">08</div>
+                    <div class="feature-icon">📊</div>
+                    <h3>
+                        <span class="lang-cn">年度回顾报告</span>
                         <span class="lang-en">Yearly Report</span>
                     </h3>
                     <p>
-                        <span class="lang-cn">自动生成年度观鸟回顾，包含详细统计数据和国家分布</span>
-                        <span class="lang-en">Auto-generate yearly birding summary with detailed stats</span>
+                        <span class="lang-cn">自动生成年度观鸟回顾与生涯统计，涵盖鸟种总数、国家省份分布与高光时刻，一键生成精美长图分享。</span>
+                        <span class="lang-en">Auto-generate yearly birding reviews and life stats with species counts, regional distribution, and highlight moments.</span>
                     </p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-number">04</div>
-                    <h3>
-                        <span class="lang-cn">观鸟地图</span>
-                        <span class="lang-en">Birding Map</span>
-                    </h3>
-                    <p>
-                        <span class="lang-cn">地图缩略图标记 + 探索模式，可直接导航至观测点</span>
-                        <span class="lang-en">Thumbnail markers + explore mode, navigate to sighting locations</span>
-                    </p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-number">05</div>
-                    <h3>
-                        <span class="lang-cn">社区分享</span>
-                        <span class="lang-en">Community Sharing</span>
-                    </h3>
-                    <p>
-                        <span class="lang-cn">iCloud 自动同步，分享观鸟记录，多设备无缝切换</span>
-                        <span class="lang-en">iCloud auto-sync, share sightings, seamless multi-device</span>
-                    </p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-number">06</div>
+                    <div class="feature-number">09</div>
+                    <div class="feature-icon">💚</div>
                     <h3>
                         <span class="lang-cn">真永久免费</span>
                         <span class="lang-en">Truly Free Forever</span>
                     </h3>
                     <p>
-                        <span class="lang-cn">没广告，没有 VIP，没有 Pro，没有套路</span>
-                        <span class="lang-en">No ads, no VIP, no Pro, no tricks</span>
+                        <span class="lang-cn">纯粹观鸟情怀：零广告、无 VIP、无订阅内购、无任何套路，离线数据本地安全存储。</span>
+                        <span class="lang-en">Built purely for birders: zero ads, no VIP, no subscriptions, no paywalls, and 100% offline local privacy.</span>
                     </p>
                 </div>
             </div>
@@ -223,7 +264,7 @@
             </div>
             <div class="version-card">
                 <div class="version-header">
-                    <span class="version-badge">V1.0.2</span>
+                    <span class="version-badge">V1.6.2</span>
                     <span class="version-date">
                         <span class="lang-cn">最新版本</span>
                         <span class="lang-en">Latest Version</span>
@@ -231,20 +272,24 @@
                 </div>
                 <ul class="version-list">
                     <li>
-                        <span class="lang-cn">社区点赞：支持对社区鸟讯点赞互动</span>
-                        <span class="lang-en">Community Likes: Like and interact with sightings</span>
+                        <span class="lang-cn"><strong>🔭 望远镜模式</strong>：支持 USB-C / HDMI 采集卡直连大炮长焦相机与单筒望远镜，1080p 60fps 实时视网膜级高清取景，支持 1x-3x 触控数码变焦与一键截帧存相册</span>
+                        <span class="lang-en"><strong>Telescope Mode</strong>: USB-C / HDMI direct connect to spotting scopes and telephoto cameras with 1080p 60fps live view, 1x-3x digital zoom, and instant screenshot capture</span>
                     </li>
                     <li>
-                        <span class="lang-cn">年度报告：自动生成年度观鸟回顾</span>
-                        <span class="lang-en">Yearly Report: Auto-generate yearly birding summary</span>
+                        <span class="lang-cn"><strong>⚡ 闪识实时识别</strong>：手机摄像头超长焦直接对准鸟类，FastViT-MA36 毫秒级动态追踪推断，支持自动语音播报鸟名</span>
+                        <span class="lang-en"><strong>Live Camera ID</strong>: Aim iPhone camera directly at birds with FastViT-MA36 realtime tracking and voice announcement</span>
                     </li>
                     <li>
-                        <span class="lang-cn">地图缩略图：放大地图时显示鸟种缩略图</span>
-                        <span class="lang-en">Map Thumbnails: Show bird thumbnails when zoomed in</span>
+                        <span class="lang-cn"><strong>📷 联机拍全面进阶</strong>：尼康 / 索尼微单即拍即传，新增 iPhone 个人热点微流量心跳防休眠；新增远距隐蔽鸟类二次手动自由裁切与重选</span>
+                        <span class="lang-en"><strong>Camera Tethering Upgrade</strong>: Instant Nikon/Sony tethering with hotspot keep-alive heartbeat and secondary manual crop fallback for distant birds</span>
                     </li>
                     <li>
-                        <span class="lang-cn">HEIC 格式：图片存储节省 40-50% 空间</span>
-                        <span class="lang-en">HEIC Format: Save 40-50% storage space</span>
+                        <span class="lang-cn"><strong>📝 边走边记智能清单</strong>：按时间与足迹自动聚合，快速打勾记录鸟种初见，野外观鸟更轻松</span>
+                        <span class="lang-en"><strong>Field Checklist</strong>: Auto timeline & track aggregation with one-tap tick off recording for field birding</span>
+                    </li>
+                    <li>
+                        <span class="lang-cn"><strong>🚀 离线模型与体验优化</strong>：全离线 CoreML 升级，10,964 种鸟类毫秒级离线推断，深山无网随时可用</span>
+                        <span class="lang-en"><strong>CoreML Offline Optimization</strong>: 10,964 bird species full offline recognition with zero cellular data required</span>
                     </li>
                 </ul>
             </div>
@@ -351,7 +396,7 @@
                         <span class="lang-cn">使用教程</span>
                         <span class="lang-en">Tutorial</span>
                     </a>
-                    <a href="#">
+                    <a href="faq.html">
                         <span class="lang-cn">常见问题</span>
                         <span class="lang-en">FAQ</span>
                     </a>

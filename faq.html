@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>常见问题 - 慧眼观鸟 SuperBirder</title>
+    <meta name="description" content="慧眼观鸟常见问题解答 - FAQ">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/icon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* FAQ-specific styles */
+        .faq-hero {
+            padding: 120px 0 40px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .faq-hero h1 {
+            font-size: clamp(32px, 6vw, 48px);
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: var(--space-md);
+        }
+
+        .faq-hero p {
+            color: var(--text-secondary);
+            font-size: 16px;
+        }
+
+        .faq-content {
+            padding: var(--space-xl) 0 var(--space-2xl);
+        }
+
+        /* Category section */
+        .faq-category {
+            margin-bottom: var(--space-2xl);
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            margin-bottom: var(--space-lg);
+            padding-bottom: var(--space-md);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .category-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: var(--accent);
+            color: var(--bg-void);
+            border-radius: 50%;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .category-header h2 {
+            font-size: 24px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        /* FAQ Item - Accordion */
+        .faq-item {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--space-md);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--space-md) var(--space-lg);
+            background: transparent;
+            border: none;
+            color: var(--text-primary);
+            font-size: 15px;
+            font-weight: 500;
+            text-align: left;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .faq-question:hover {
+            background: rgba(200, 255, 0, 0.05);
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 20px;
+            font-weight: 400;
+            color: var(--accent);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.open .faq-question::after {
+            content: '−';
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 1000px;
+        }
+
+        .faq-answer-inner {
+            padding: 0 var(--space-lg) var(--space-lg);
+            color: var(--text-secondary);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .faq-answer-inner p {
+            margin-bottom: var(--space-sm);
+        }
+
+        .faq-answer-inner p:last-child {
+            margin-bottom: 0;
+        }
+
+        .faq-answer-inner ul {
+            margin: var(--space-sm) 0;
+            padding-left: var(--space-lg);
+        }
+
+        .faq-answer-inner li {
+            margin-bottom: var(--space-xs);
+        }
+
+        /* Screenshot in FAQ */
+        .faq-screenshot {
+            display: block;
+            max-width: 200px;
+            margin: var(--space-md) auto;
+            border-radius: var(--radius-md);
+            border: 2px solid var(--bg-card);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        .faq-screenshot-row {
+            display: flex;
+            gap: var(--space-md);
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: var(--space-md) 0;
+        }
+
+        .faq-screenshot-row img {
+            max-width: 160px;
+        }
+
+        /* Tip box */
+        .tip-box {
+            background: var(--accent-dim);
+            border: 1px solid rgba(200, 255, 0, 0.2);
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
+            margin-top: var(--space-md);
+        }
+
+        .tip-box-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: var(--space-sm);
+        }
+
+        .tip-box p {
+            font-size: 13px;
+            margin: 0;
+        }
+
+        /* Back to top */
+        .back-to-top {
+            position: fixed;
+            bottom: var(--space-lg);
+            right: var(--space-lg);
+            width: 48px;
+            height: 48px;
+            background: var(--accent);
+            color: var(--bg-void);
+            border: none;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px var(--accent-glow);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .faq-question {
+                padding: var(--space-md);
+                font-size: 14px;
+            }
+
+            .faq-answer-inner {
+                padding: 0 var(--space-md) var(--space-md);
+            }
+
+            .faq-screenshot {
+                max-width: 160px;
+            }
+
+            .faq-screenshot-row img {
+                max-width: 140px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Subtle grain overlay -->
+    <div class="grain"></div>
+
+    <!-- Header -->
+    <header>
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <img src="img/icon.png" alt="SuperBirder">
+                <span>SuperBirder</span>
+            </a>
+            <div class="lang-switch">
+                <button class="lang-btn active" onclick="setLang('cn')">中</button>
+                <button class="lang-btn" onclick="setLang('en')">EN</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- FAQ Hero -->
+    <section class="faq-hero">
+        <div class="container">
+            <h1>
+                <span class="lang-cn">常见问题</span>
+                <span class="lang-en">FAQ</span>
+            </h1>
+            <p>
+                <span class="lang-cn">快速找到你需要的答案</span>
+                <span class="lang-en">Find answers to common questions</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- FAQ Content -->
+    <main class="faq-content">
+        <div class="container">
+
+            <!-- Category 1: Getting Started -->
+            <section class="faq-category">
+                <div class="category-header">
+                    <span class="category-icon">🚀</span>
+                    <h2>
+                        <span class="lang-cn">入门问题</span>
+                        <span class="lang-en">Getting Started</span>
+                    </h2>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>
+                            <span class="lang-cn">为什么必须使用 Apple ID 登录？</span>
+                            <span class="lang-en">Why must I sign in with Apple ID?</span>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>
+                                <span class="lang-cn">Apple ID 登录是苹果官方提供的安全认证方式，有以下优势：</span>
+                                <span class="lang-en">Apple ID is Apple's official secure authentication method with
+                                    these benefits:</span>
+                            </p>
+                            <ul>
+                                <li>
+                                    <span class="lang-cn">无需记忆额外密码</span>
+                                    <span class="lang-en">No extra password to remember</span>
+                                </li>
+                                <li>
+                                    <span class="lang-cn">数据自动跨设备同步（通过 iCloud）</span>
+                                    <span class="lang-en">Auto-sync across devices (via iCloud)</span>
+                                </li>
+                                <li>
+                                    <span class="lang-cn">国内国外用户都可以使用</span>
+                                    <span class="lang-en">Works worldwide</span>
+                                </li>
+                                <li>
+                                    <span class="lang-cn">隐私保护：可选择隐藏真实邮箱</span>
+                                    <span class="lang-en">Privacy: Option to hide your real email</span>
+                                </li>
+                            </ul>
+                            <img src="img/screenshoot/01_login.png" alt="Apple ID 登录" class="faq-screenshot">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>
+                            <span class="lang-cn">应用收费吗？</span>
+                            <span class="lang-en">Is the app free?</span>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>
+                                <span class="lang-cn"><strong>永久免费</strong>。没有广告，没有 VIP，没有 Pro
+                                    版，没有任何套路。所有功能完全免费使用。</span>
+                                <span class="lang-en"><strong>Forever free</strong>. No ads, no VIP, no Pro version, no
+                                    tricks. All features are completely free.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>
+                            <span class="lang-cn">支持哪些设备？</span>
+                            <span class="lang-en">What devices are supported?</span>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>
+                                <span class="lang-cn">支持运行 iOS 18.0 或更高版本的 iPhone。由于 AI 模型需要较新的神经引擎，暂不支持较旧设备。</span>
+                                <span class="lang-en">Supports iPhone running iOS 18.0 or later. Older devices are not
+                                    supported due to AI model requirements for newer Neural Engine.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Category 2: Privacy & Permissions -->
+            <section class="faq-category">
+                <div class="category-header">
+                    <span class="category-icon">🔒</span>
+                    <h2>
+                        <span class="lang-cn">隐私与权限</span>
+                        <span class="lang-en">Privacy & Permissions</span>
+                    </h2>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>
+                            <span class="lang-cn">为什么需要访问我的照片图库？</span>
+                            <span class="lang-en">Why does the app need access to my photos?</span>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>
+                                <span class="lang-cn">慧眼观鸟需要访问照片图库来选择鸟类照片进行识别。你可以选择：</span>
+                                <span class="lang-en">SuperBirder needs photo access to select bird photos for
+                                    identification. You can choose:</span>
+                            </p>
+                            <ul>
+                                <li>
+                                    <span class="lang-cn"><strong>限制访问</strong>：每次只选择特定照片</span>
+                                    <span class="lang-en"><strong>Limited Access</strong>: Select specific photos each
+                                        time</span>
+                                </li>
+                                <li>
+                                    <span class="lang-cn"><strong>允许完全访问</strong>：方便快速选择任意照片</span>
+                                    <span class="lang-en"><strong>Full Access</strong>: Convenient access to all
+                                        photos</span>
+                                </li>
+                            </ul>
+                            <img src="guide_images/允许访问图库.PNG" alt="照片访问权限" class="faq-screenshot">
+                            <div class="tip-box">
+                                <div class="tip-box-title">💡
+                                    <span class="lang-cn">提示</span>
+                                    <span class="lang-en">Tip</span>
+                                </div>
+                                <p>
+                                    <span class="lang-cn">照片仅在本地处理，不会上传到任何服务器。</span>
+                                    <span class="lang-en">Photos are processed locally only, never uploaded to any
+                                        server.</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>
+                            <span class="lang-cn">为什么需要访问我的位置？</span>
+                            <span class="lang-en">Why does the app need my location?</span>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>
+                                <span class="lang-cn">位置权限用于以下功能：</span>
+                                <span class="lang-en">Location permission is used for:</span>
+                            </p>
+                            <ul>
+                                <li>
+                                    <span class="lang-cn">为照片添加 GPS 信息（如果照片本身没有）</span>
+                                    <span class="lang-en">Add GPS info to photos (if not present)</span>
+                                </li>
+                                <li>
+                                    <span class="lang-cn">查看附近的观鸟记录</span>
+                                    <span class="lang-en">View nearby bird sightings</span>
+                                </li>
+                                <li>
+                                    <span class="lang-cn">在地图上定位当前位置</span>
+                                    <span class="lang-en">Locate current position on map</span>
+                                </li>
+                            </ul>
+                            <img src="guide_images/IMG_2655.PNG" alt="位置访问权限" class="faq-screenshot">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>
+                            <span class="lang-cn">分享到社区会暴露我的精确位置吗？</span>
+                            <span class="lang-en">Will sharing to community expose my exact location?</span>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>
+                                <span class="lang-cn"><strong>不会</strong>。分享到社区时：</span>
+                                <span class="lang-en"><strong>No</strong>. When sharing to community:</span>
+                            </p>
+                            <ul>
+                                <li>
+                                    <span class="lang-cn">精确 GPS 坐标<strong>不会上传</strong></span>
+                                    <span class="lang-en">Exact GPS coordinates are <strong>NOT uploaded</strong></span>
+                                </li>
+                                <li>
+                                    <span class="lang-cn">备注内容<strong>不会上传</strong></span>
+                                    <span class="lang-en">Notes are <strong>NOT uploaded</strong></span>
+                                </li>
+                                <li>
+                                    <span class="lang-cn">仅显示大致地区（城市级别）</span>
+                                    <span class="lang-en">Only approximate region (city level) is shown</span>
+                                </li>
+                            </ul>
+                            <p>
+                                <span class="lang-cn">你的精确位置和个人备注仅保存在本地设备上。</span>
+                                <span class="lang-en">Your exact location and personal notes are stored locally
+                                    only.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>
+                            <span class="lang-cn">我的数据存储在哪里？</span>
+                            <span class="lang-en">Where is my data stored?</span>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>
+                                <span class="lang-cn">你的观鸟记录存储在两个地方：</span>
+                                <span class="lang-en">Your bird records are stored in two places:</span>
+                            </p>
+                            <ul>
+                                <li>
+                                    <span class="lang-cn"><strong>本地设备</strong>：完整记录，包含精确 GPS 和备注</span>
+                                    <span class="lang-en"><strong>Local device</strong>: Full records with exact GPS and
+                                        notes</span>
+                                </li>
+                                <li>
+                                    <span class="lang-cn"><strong>iCloud</strong>：通过苹果 CloudKit 同步，用于跨设备和社区分享</span>
+                                    <span class="lang-en"><strong>iCloud</strong>: Via Apple CloudKit for cross-device
+                                        sync and community sharing</span>
+                                </li>
+                            </ul>
+                            <p>
+                                <span class="lang-cn">社区数据由苹果公司的 iCloud 服务管理，与慧眼观鸟应用本身无关。</span>
+                                <span class="lang-en">Community data is managed by Apple's iCloud service, not by
+                                    SuperBirder.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Category 3: Bird Identification -->
+            <section class="faq-category">
+                <div class="category-header">
+                    <span class="category-icon">🐦</span>
+                    <h2>
+                        <span class="lang-cn">鸟类识别</span>
+                        <span class="lang-en">Bird Identification</span>
+                    </h2>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>
+                            <span class="lang-cn">识别需要联网吗？</span>
+                            <span class="lang-en">Does identification require internet?</span>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>
+                                <span class="lang-cn"><strong>不需要</strong>。AI 鸟类识别完全离线运行，使用苹果原生 CoreML 模型，在设备本地完成识别，通常只需
+                                    1-2 秒。</span>
+                                <span class="lang-en"><strong>No</strong>. AI bird identification runs completely
+                                    offline using Apple's native CoreML model, processed locally on device in about 1-2
+                                    seconds.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>
+                            <span class="lang-cn">为什么识别置信度不高？</span>
+                            <span class="lang-en">Why is the confidence score low?</span>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>
+                                <span class="lang-cn">置信度受多种因素影响：</span>
+                                <span class="lang-en">Confidence is affected by various factors:</span>
+                            </p>
+                            <ul>
+                                <li>
+                                    <span class="lang-cn">照片质量（清晰度、曝光）</span>
+                                    <span class="lang-en">Photo quality (sharpness, exposure)</span>
+                                </li>
+                                <li>
+                                    <span class="lang-cn">拍摄角度（正面通常比背面更容易识别）</span>
+                                    <span class="lang-en">Angle (front view usually easier than back)</span>
+                                </li>
+                                <li>
+                                    <span class="lang-cn">鸟类是否完整可见</span>
+                                    <span class="lang-en">Whether the bird is fully visible</span>
+                                </li>
+                                <li>
+                                    <span class="lang-cn">相似物种的区分难度</span>
+                                    <span class="lang-en">Difficulty distinguishing similar species</span>
+                                </li>
+                            </ul>
+                            <div class="tip-box">
+                                <div class="tip-box-title">💡
+                                    <span class="lang-cn">提示</span>
+                                    <span class="lang-en">Tip</span>
+                                </div>
+                                <p>
+                                    <span class="lang-cn">90% 以上可直接采用，70-90% 建议核对，70% 以下建议手动确认。</span>
+                                    <span class="lang-en">90%+ is reliable, 70-90% verify recommended, below 70% manual
+                                        check suggested.</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>
+                            <span class="lang-cn">什么是 eBird 地区过滤？</span>
+                            <span class="lang-en">What is eBird region filter?</span>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>
+                                <span class="lang-cn">开启 eBird 过滤后，系统会优先显示你选择的国家/地区常见的鸟种，从而提高识别准确率。系统会记住你的预设。</span>
+                                <span class="lang-en">When enabled, the system prioritizes species commonly found in
+                                    your selected country/region, improving accuracy. Your preference is saved.</span>
+                            </p>
+                            <img src="img/screenshoot/05_ebird.png" alt="eBird 地区选择" class="faq-screenshot">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>
+                            <span class="lang-cn">识别错误怎么办？</span>
+                            <span class="lang-en">What if identification is wrong?</span>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>
+                                <span class="lang-cn">你可以：</span>
+                                <span class="lang-en">You can:</span>
+                            </p>
+                            <ul>
+                                <li>
+                                    <span class="lang-cn">从候选列表中选择正确的鸟种</span>
+                                    <span class="lang-en">Select the correct species from the candidate list</span>
+                                </li>
+                                <li>
+                                    <span class="lang-cn">手动输入鸟种名称进行搜索</span>
+                                    <span class="lang-en">Manually search and input the species name</span>
+                                </li>
+                                <li>
+                                    <span class="lang-cn">点击「编辑识别框」调整识别区域后重新识别</span>
+                                    <span class="lang-en">Tap "Edit Detection Box" to adjust the area and
+                                        re-identify</span>
+                                </li>
+                            </ul>
+                            <img src="img/screenshoot/06_edit_box.png" alt="编辑识别框" class="faq-screenshot">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>
+                            <span class="lang-cn">照片里有多只鸟怎么办？</span>
+                            <span class="lang-en">What if there are multiple birds in the photo?</span>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>
+                                <span class="lang-cn">使用「编辑识别框」功能，手动框选你想要识别的那只鸟，系统会针对框选区域重新进行识别。</span>
+                                <span class="lang-en">Use "Edit Detection Box" to manually select the bird you want to
+                                    identify. The system will re-identify based on your selection.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Category 4: Records -->
+            <section class="faq-category">
+                <div class="category-header">
+                    <span class="category-icon">📝</span>
+                    <h2>
+                        <span class="lang-cn">记录管理</span>
+                        <span class="lang-en">Record Management</span>
+                    </h2>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>
+                            <span class="lang-cn">为什么我的照片没有 GPS 信息？</span>
+                            <span class="lang-en">Why doesn't my photo have GPS info?</span>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>
+                                <span class="lang-cn">可能的原因：</span>
+                                <span class="lang-en">Possible reasons:</span>
+                            </p>
+                            <ul>
+                                <li>
+                                    <span class="lang-cn">相机没有开启 GPS 记录功能</span>
+                                    <span class="lang-en">Camera GPS recording is disabled</span>
+                                </li>
+                                <li>
+                                    <span class="lang-cn">iPhone 相机的位置权限被关闭</span>
+                                    <span class="lang-en">iPhone camera location permission is off</span>
+                                </li>
+                                <li>
+                                    <span class="lang-cn">照片是从网上下载或他人分享的</span>
+                                    <span class="lang-en">Photo was downloaded or shared by others</span>
+                                </li>
+                            </ul>
+                            <p>
+                                <span class="lang-cn">没有 GPS 时，你可以在保存记录时手动搜索地点或在地图上选点。</span>
+                                <span class="lang-en">Without GPS, you can search for a location or pick on the map when
+                                    saving.</span>
+                            </p>
+                            <img src="img/screenshoot/08_map.png" alt="地图选点" class="faq-screenshot">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>
+                            <span class="lang-cn">什么是「生涯新种」(Life Bird)？</span>
+                            <span class="lang-en">What is a "Life Bird"?</span>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>
+                                <span
+                                    class="lang-cn">「生涯新种」是指你<strong>人生中第一次拍摄到</strong>的鸟种，以<strong>拍摄时间</strong>为准，而不是添加记录的时间。</span>
+                                <span class="lang-en">"Life Bird" means a species you photographed for the
+                                    <strong>first time ever</strong>, determined by <strong>capture time</strong>, not
+                                    when you added the record.</span>
+                            </p>
+                            <p>
+                                <span class="lang-cn">生涯新种会在记录列表中显示皇冠 👑 标记，这是观鸟者的重要里程碑。</span>
+                                <span class="lang-en">Life birds are marked with a crown 👑 badge in your records - an
+                                    important milestone for birders.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>
+                            <span class="lang-cn">如何备份和恢复数据？</span>
+                            <span class="lang-en">How to backup and restore data?</span>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>
+                                <span class="lang-cn"><strong>创建备份：</strong></span>
+                                <span class="lang-en"><strong>Create backup:</strong></span>
+                            </p>
+                            <p>
+                                <span class="lang-cn">设置 → 备份与恢复 → 创建备份</span>
+                                <span class="lang-en">Settings → Backup & Restore → Create Backup</span>
+                            </p>
+                            <p>
+                                <span class="lang-cn"><strong>恢复备份：</strong></span>
+                                <span class="lang-en"><strong>Restore backup:</strong></span>
+                            </p>
+                            <p>
+                                <span class="lang-cn">选择备份文件 → 恢复 → 重启应用</span>
+                                <span class="lang-en">Select backup file → Restore → Restart app</span>
+                            </p>
+                            <img src="img/screenshoot/15_settings.png" alt="设置页面" class="faq-screenshot">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>
+                            <span class="lang-cn">如何删除或编辑已保存的记录？</span>
+                            <span class="lang-en">How to delete or edit saved records?</span>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>
+                                <span class="lang-cn">在「我的」页面点击记录卡片进入详情页，可以编辑鸟种名称、地点、备注，或删除该记录。</span>
+                                <span class="lang-en">Tap a record card in "My" page to enter details, where you can
+                                    edit species name, location, notes, or delete the record.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Category 5: Community -->
+            <section class="faq-category">
+                <div class="category-header">
+                    <span class="category-icon">🌍</span>
+                    <h2>
+                        <span class="lang-cn">社区相关</span>
+                        <span class="lang-en">Community</span>
+                    </h2>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>
+                            <span class="lang-cn">如何分享记录到社区？</span>
+                            <span class="lang-en">How to share records to community?</span>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>
+                                <span class="lang-cn">保存记录时，勾选「分享到社区」选项即可。你也可以在设置中开启默认分享，这样每次保存都会自动分享。</span>
+                                <span class="lang-en">Check "Share to Community" when saving a record. You can also
+                                    enable default sharing in Settings to auto-share every save.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>
+                            <span class="lang-cn">社区数据由谁管理？</span>
+                            <span class="lang-en">Who manages community data?</span>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>
+                                <span class="lang-cn">社区数据存储在苹果公司提供的 <strong>iCloud CloudKit</strong>
+                                    服务上，由苹果公司管理，与慧眼观鸟应用本身无关。</span>
+                                <span class="lang-en">Community data is stored on Apple's <strong>iCloud
+                                        CloudKit</strong> service, managed by Apple, not by the SuperBirder app
+                                    itself.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>
+                            <span class="lang-cn">为什么社区中这只鸟照片画质不高？</span>
+                            <span class="lang-en">Why is community photo quality not high?</span>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>
+                                <span class="lang-cn">为了节省带宽和存储空间，分享到社区的照片会进行压缩。你的本地记录保存的是原始画质，比云端高一倍以上。</span>
+                                <span class="lang-en">Community photos are compressed to save bandwidth and storage.
+                                    Your local records keep original quality, 2x better than cloud versions.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Category 6: Other -->
+            <section class="faq-category">
+                <div class="category-header">
+                    <span class="category-icon">❓</span>
+                    <h2>
+                        <span class="lang-cn">其他问题</span>
+                        <span class="lang-en">Other Questions</span>
+                    </h2>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>
+                            <span class="lang-cn">如何修改昵称？</span>
+                            <span class="lang-en">How to change nickname?</span>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>
+                                <span class="lang-cn">设置 → 点击你的昵称 → 输入新昵称 → 保存</span>
+                                <span class="lang-en">Settings → Tap your nickname → Enter new nickname → Save</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>
+                            <span class="lang-cn">如何联系开发者？</span>
+                            <span class="lang-en">How to contact the developer?</span>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>
+                                <span class="lang-cn">可以通过以下方式联系：</span>
+                                <span class="lang-en">You can contact via:</span>
+                            </p>
+                            <ul>
+                                <li>
+                                    <span class="lang-cn">邮箱：james@jamesphotography.com.au</span>
+                                    <span class="lang-en">Email: james@jamesphotography.com.au</span>
+                                </li>
+                                <li>
+                                    <span class="lang-cn">GitHub：github.com/jamesphotography</span>
+                                    <span class="lang-en">GitHub: github.com/jamesphotography</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>
+                            <span class="lang-cn">这个应用有 Android 版吗？</span>
+                            <span class="lang-en">Is there an Android version?</span>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>
+                                <span class="lang-cn">目前仅支持 iOS。由于应用使用苹果专有的 CoreML 技术和 iCloud 同步，暂无 Android 版本计划。</span>
+                                <span class="lang-en">Currently iOS only. Due to Apple-specific CoreML technology and
+                                    iCloud sync, there are no plans for an Android version.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <img src="img/icon.png" alt="SuperBirder">
+                    <div class="footer-brand-text">
+                        <span>SuperBirder</span>
+                        <span class="footer-author">by James Yu (詹姆斯·于震)</span>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">
+                        <span class="lang-cn">首页</span>
+                        <span class="lang-en">Home</span>
+                    </a>
+                    <a href="tutorial.html">
+                        <span class="lang-cn">使用教程</span>
+                        <span class="lang-en">Tutorial</span>
+                    </a>
+                    <a href="https://github.com/jamesphotography">GitHub</a>
+                    <a href="https://www.youtube.com/@JamesZhenYu">YouTube</a>
+                    <a href="mailto:james@jamesphotography.com.au">
+                        <span class="lang-cn">联系</span>
+                        <span class="lang-en">Contact</span>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">© 2024-2026 James Yu · jamesphotography.com.au</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">↑</button>
+
+    <!-- Scripts -->
+    <script>
+        // Language Toggle
+        function setLang(lang) {
+            document.documentElement.setAttribute('data-lang', lang);
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            localStorage.setItem('superbirder-lang', lang);
+        }
+
+        // Load saved language
+        const savedLang = localStorage.getItem('superbirder-lang') || 'cn';
+        document.documentElement.setAttribute('data-lang', savedLang);
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                const isCN = btn.textContent.includes('中');
+                if ((savedLang === 'cn' && isCN) || (savedLang === 'en' && !isCN)) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        });
+
+        // FAQ Accordion Toggle
+        function toggleFaq(button) {
+            const item = button.parentElement;
+            item.classList.toggle('open');
+        }
+
+        // Back to top button
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.addEventListener('scroll', () => {
+            const btn = document.getElementById('backToTop');
+            if (window.scrollY > 500) {
+                btn.classList.add('visible');
+            } else {
+                btn.classList.remove('visible');
+            }
+        });
+    </script>
+</body>
+
+</html>
